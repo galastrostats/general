@@ -1,6 +1,6 @@
 # Git and GitHub tutorial
 
-## 1. Go [here](https://github.com/galastrostats/getting-started/blob/master/advance_prep.md) if you need a GitHub account or must install Git.
+## 1. Go [here](https://github.com/galastrostats/general/blob/master/advance-preparation.md) if you need a GitHub account or must install Git.
 
 ## 2. Configure Git.
 
