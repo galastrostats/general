@@ -148,14 +148,14 @@ Extensive lists of additional functions can be found in the documentation for th
 Moreover, there are dozens of other python libraries we will not be using -- someday you may create your own library!
 
 ### Logging Your Work
-Now that you've seen the basics, let's start recording your work. To do this, you should paste all your successful commands into a text editor, where they will become a program (sequence of commands). You can use the ipython specific command `%hist` to view all your command input. Paste in the output from your successful commands as well, inserting a `#` comment character before each line of output so that python does not try to interpret the output as a command. Save it under the new name `tutorialanswers\_yournamehere.py` in a different folder that you will use for all your python files. Remember to put 
+Now that you've seen the basics, let's start recording your work. To do this, you should paste all your successful commands into a text editor, where they will become a program (sequence of commands). You can use the ipython specific command `%hist` to view all your command input. Paste in the output from your successful commands as well, inserting a `#` comment character before each line of output so that python does not try to interpret the output as a command. Save it under the new name `tutorialanswers_yournamehere.py` in a different folder that you will use for all your python files. Remember to put 
 
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 
-at the top of your file. Also put a comment at the top with your name and date. Now you can check your answers by saving and running your program with `run _yournamehere` at the ipython prompt, or just `python _yournamehere.py` at any regular terminal. You will submit your final program file as part of your homework.
+at the top of your file. Also put a comment at the top with your name and date. Now you can check your answers by saving and running your program with `run tutorialanswers_yournamehere` at the ipython prompt, or just `python tutorialanswers_yournamehere.py` at any regular terminal. You will submit your final program file as part of your homework.
 
 At last, it's time to show off your new python skills "for the record."
 
