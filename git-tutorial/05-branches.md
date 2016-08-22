@@ -12,59 +12,51 @@ To see what branches are available in your repository, you can type `git branch`
 ```
 $ cd path-to-planets-dir
 $ git branch
-```
-You'll see only one branch, "master", which is created when the repository is initialized.
-
 * master
+```
+You see only one branch, "master", which is created when the repository is initialized.
 
-The master branch is created with the repository is initialized. With an argument, the `branch` command creates a new branch with the given name. Let's make a new experimental branch:
+With an argument, the `git branch` command creates a new branch with the given name. Let's make a new experimental branch:
 
-~~~ {.bash}
+```
 $ git branch experimental
-~~~
-
-~~~ {.output}
   experimental
 * master
-~~~
+```
 
-The star indicates we are currently in the master branch of our repository. To switch branches, we use the `git checkout` command to checkout a different branch. 
+The star indicates we are still currently in the master branch of our repository. To switch branches, we use the `git checkout` command to checkout a different branch. 
 
-~~~ {.bash}
+```
 $ git checkout experimental
 $ git branch
-~~~
-
-~~~ {.output}
 Switched to branch 'experimental'
+```
 
+Type `git branch` again to see that the star has moved:
+
+```
+$ git branch
 * experimental
   master
-~~~
+```
 
-We have some updated information on pluto, but we aren't sure that we will want to include in our final report. Let's make some updates to the `pluto.txt` file in this experimental branch:
+Suppose we have some updated information on pluto suggesting it has a heart on its surface, but we aren't sure that we will want to include this detail in our final report. Let's make some updates to the `pluto.txt` file in this experimental branch:
 
-~~~ {.bash}
-$ nano pluto.txt
+```
+$ vi pluto.txt          # add "A planet with a charming heart on its surface; What's not to love?"
 $ cat pluto.txt
-~~~
-
-~~~ {.output}
 It is so a planet!
 A planet with a charming heart on its surface; What's not to love?
-~~~
+```
 
 We've made this change on our experimental branch. Let's add and commit this change:
 
-~~~ {.bash}
+```
 $ git add pluto.txt
 $ git commit -m "Breaking updates about Pluto"
-~~~
-
-~~~ {.output}
 [experimental c5d6cba] Breaking updates about Pluto
  1 file changed, 1 insertion(+)
-~~~
+```
 
 We've committed these changes locally, but we need to push these changes and our new branch to GitHub. To do so, we enter the following command:  
 
