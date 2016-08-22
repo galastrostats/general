@@ -1,7 +1,7 @@
 | [⬅ 5. Working with branches](05-branches.md)| [Table of Contents](00-contents.md) | [7. Collaborating ➡](07-collaborating.md) |
 | :---- |:----:| ----:|
 
-# 6. Remotes in GitHub
+# 6. Setting up a remote repository in GitHub
 
 Version control really comes into its own when we begin to collaborate with
 other people.  We already have most of the machinery we need to do this; the
