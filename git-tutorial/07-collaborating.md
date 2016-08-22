@@ -3,19 +3,16 @@
 
 # 7. Collaborating
 
-For the next step, get into pairs.  One person will be the "Owner" and the other
-will be the "Collaborator". The goal is that the Collaborator add changes into
-the Owner's repository. We will switch roles at the end, so both persons will
-play Owner and Collaborator.
+In section five of this tutorial you learned about branches. We will use branches to collaborate on projects in this class. 
 
-The Owner needs to give the Collaborator access.
-On GitHub, click the settings button on the right,
+For the next step, get into pairs.  One person will be the "Owner" and the other will be the "Collaborator". The goal is that the Collaborator add changes into the Owner's repository. We will switch roles at the end, so both persons will play Owner and Collaborator.
+
+The Owner needs to give the Collaborator access. On GitHub, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
 
 ![Adding Collaborators on GitHub](fig/github-add-collaborators.png)
 
-To accept access to the Owner's repo, the Collaborator
-needs to go to [https://github.com/notifications](https://github.com/notifications).
+To accept access to the Owner's repo, the Collaborator needs to go to [https://github.com/notifications](https://github.com/notifications).
 Once there she can accept access to the Owner's repo.
 
 Next, the Collaborator needs to download a copy of the Owner's repository to her
@@ -26,10 +23,24 @@ her `Desktop` folder (for example), the Collaborator enters:
 $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 ```
 
-
 Replace 'vlad' with the Owner's username.
 
 ![After Creating Clone of Repository](fig/github-collaboration.png)
+
+Now both the Collaborator and the Owner have a local copy of the master branch of the repository. However neither of them should make changes to the master, instead they should work on personal branches. To protect the master from getting unreviewed changes, you can protech your master branch. To do this
+
+1. Owner should navigate to the main page of the repository on github.
+2. Under your repository name, click Settings.
+3. In the left menu, click Branches.
+4  Under Protected Branches, select the master branch.
+5. Select Protect this branch, and click Save changes.
+
+Make a branch of your local master and switch to it
+
+```
+git branch pluto
+git checkout pluto
+```
 
 The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
@@ -49,28 +60,33 @@ $ git commit -m "Some notes about Pluto"
 ```
 
 
-Then push the change to the *Owner's repository* on GitHub:
+Then push the change to your branch on the *Owner's repository* on GitHub:
 
 ```
-$ git push origin master
+$ git push origin pluto
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
-   9272da5..29aba7c  master -> master
+   9272da5..29aba7c  pluto -> pluto
 ```
 
-Note that we didn't have to create a remote called `origin`: Git uses this
-name by default when we clone a repository.  (This is why `origin` was a
-sensible choice earlier when we were setting up remotes by hand.)
-
 Take a look to the Owner's repository on its GitHub website now (maybe you need
-to refresh your browser.) You should be able to see the new commit made by the
+to refresh your browser.) You should be able to see the new branch made by the
 Collaborator.
 
-To download the Collaborator's changes from GitHub, the Owner now enters:
+Now we need to merge the changes. To do this, the Collaborator submits a pull request to the owner. To do this
+
+1. Switch to new branch in Github
+2. Click on the new pull request
+
+The Collaborator will then be given a review page that presents you with an overview of the changes, and a place to write a comment. After filling them in you can click `Create pull request`
+
+Now it is the owners job to review the proposed changes. On the owners gitub page, go to the pull requests tab, you should see a new pull request from the contributor. Click on it to review the suggested changes, add comments if necessary.
+
+Once you are ready to merge you can click `Create a merge commit` to merge the branch with master. Both the owner and collaborator can now pull the changes from master to their local copies by entering
 
 ```
 $ git pull origin master
@@ -87,8 +103,9 @@ Fast-forward
  create mode 100644 pluto.txt
 ```
 
-Now the three repositories (Owner's local, Collaborator's local, and Owner's on
-GitHub) are back in sync.
+Now the three repositories (Owner's local, Collaborator's local, and Owner's on GitHub) are back in sync.
+
+In practice, is is better for the owner to also push to a branch of the 
 
 ## A Basic Collaborative Workflow
 
