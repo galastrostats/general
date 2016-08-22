@@ -80,7 +80,7 @@ something else if we wanted to, but `origin` is by far the most common choice.
 Once the nickname `origin` is set up, `git push origin master` will push the changes from
 our local repository to the repository on GitHub (but don't type it yet)
 
-You can now push to the respository on github. Note we omit the `-u` in the github instructions because it assumes you won't change the branches you are pushing/pulling 
+You can now push to the respository on github. Note we omit the `-u` in the github instructions because using `-u` assumes you won't change the branches you are pushing/pulling. In fact you will want to use branches to get the full power of git.
 
 ```
 $ git push origin master
@@ -97,7 +97,6 @@ Branch master set up to track remote branch master from origin.
 Our local and remote repositories are now in this state:
 
 ![GitHub Repository After First Push](fig/github-repo-after-first-push.png)
-
 
 We can pull changes from the remote repository to the local one as well:
 
