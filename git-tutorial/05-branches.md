@@ -57,57 +57,28 @@ $ git commit -m "Breaking updates about Pluto"
  1 file changed, 1 insertion(+)
 ```
 
-We've committed these changes locally, but we need to push these changes and our new branch to GitHub. To do so, we enter the following command:  
-
-~~~ {.bash}
-$ git push origin experimental
-~~~
-
-~~~ {.output}
-Counting objects: 5, done.
-Delta compression using up to 4 threads.
-Compressing objects: 100% (3/3), done.
-Writing objects: 100% (3/3), 307 bytes, done.
-Total 3 (delta 2), reused 0 (delta 0)
-To https://github.com/erdavenport/planets.git
- * [new branch]      experimental -> experimental
-~~~
-
-Note that in the past we've types `git push origin master` when pushing to our remote.
-This was because we were making changes on our `master` branch and pushing to the remote named `origin`.
-Here, we've been working on our `experimental` branch. To push those changes to GitHub, we therefore specify that we want to push the `experimental` branch to the remote named `origin`. 
-
 Let's check our status:
 
-~~~ {.bash}
+```
 $ git status
-~~~
-
-~~~ {.output}
 On branch experimental
 nothing to commit, working directory clean
-~~~
+```
 
 You can see from the git status output that we are on the experimental branch rather than the master branch. Let's examine the master branch to ensure the original version of our `pluto.txt` doesn't include this sentimental statement:
 
-~~~ {.bash}
+```
 $ git checkout master
-~~~
-
-~~~ {.output}
 Switched to branch 'master'
-~~~
+```
 
-~~~ {.bash}
+```
 $ cat pluto.txt
-~~~
-
-~~~ {.output}
 It is so a planet!
-~~~
+```
 
 As you can see, the master branch does not include our updated notes about Pluto. 
-If we look on GitHub, we can switch between the `master` and `experimental` branch and see the same difference between the two versions of `pluto.txt`. 
+
 We are pretty confident that the heart in Pluto is charming, so let's fold in all of the changes that we've made on the experimental branch into our master branch. 
 To merge two branches together, ensure you are located in the branch you want to fold changes into. 
 In our case, we want to be in the master branch:
