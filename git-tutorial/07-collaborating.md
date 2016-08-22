@@ -7,6 +7,8 @@ In section five of this tutorial you learned about branches. We will use branche
 
 For the next step, get into pairs.  One person will be the "Owner" and the other will be the "Collaborator". The goal is that the Collaborator add changes into the Owner's repository. We will switch roles at the end, so both persons will play Owner and Collaborator.
 
+## Setup access 
+
 The Owner needs to give the Collaborator access. On GitHub, click the settings button on the right,
 then select Collaborators, and enter your partner's username.
 
@@ -15,6 +17,7 @@ then select Collaborators, and enter your partner's username.
 To accept access to the Owner's repo, the Collaborator needs to go to [https://github.com/notifications](https://github.com/notifications).
 Once there she can accept access to the Owner's repo.
 
+## Make copies
 Next, the Collaborator needs to download a copy of the Owner's repository to her
  machine. This is called "cloning a repo". To clone the Owner's repo into
 her `Desktop` folder (for example), the Collaborator enters:
@@ -25,6 +28,7 @@ $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 
 Replace 'vlad' with the Owner's username.
 
+### Protect master
 Now both the Collaborator and the Owner have a local copy of the master branch of the repository. However neither of them should make changes to the master, instead they should work on personal branches. To protect the master from getting unreviewed changes, you can protech your master branch. To do this
 
 1. Owner should navigate to the main page of the repository on github.
@@ -33,6 +37,7 @@ Now both the Collaborator and the Owner have a local copy of the master branch o
 4  Under Protected Branches, select the master branch.
 5. Select Protect this branch, and click Save changes.
 
+## Make changes to a branch
 Make a branch of your local master and switch to it
 
 ```
@@ -75,6 +80,7 @@ Take a look to the Owner's repository on its GitHub website now (maybe you need
 to refresh your browser.) You should be able to see the new branch made by the
 Collaborator.
 
+## Submit a pull request
 Now we need to merge the changes. To do this, the Collaborator submits a pull request to the owner. To do this
 
 1. Switch to new branch in Github
@@ -118,6 +124,12 @@ any changes. The basic collaborative workflow would be:
 * make your changes and stage them with `git add`,
 * commit your changes with `git commit -m`, and
 * upload the changes to GitHub with `git push origin branch1`
+* once your branch features are complete, submit a pull request
+
+### Notes about branches:
+1. As all collaborators will have access to all the branches, make sure that your branch names reflect the kinds of changes that you intend to make. 
+2. If you have completed working on a branch and have merged all changes to master, you can delete it unless you plan to make further changes to reduce branch clutter (you can see the `delete branch` button at the bottom of successfull merged pull requests and delete local copies using `git branch -d branch_name`.
+3. Keep as many branches as you need concurrently, but don't forget to make sure they are as up to date as possibe with master - this will make it easier to merge your pull request.
 
 It is better to make many commits with smaller changes rather than
 of one commit with massive changes: small commits are easier to
