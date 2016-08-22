@@ -8,7 +8,7 @@ See installation instructions for your [personal laptop](https://github.com/gala
     
 ## Part II: Getting Started and Recording Your Work
 
-After installing Anaconda, find the "Spyder" app in the installation folder or your programs menu, which will provide a nice user interface. Spyder may take a while to start up, because of all the python libraries it is loading.
+After installing Anaconda, find the "Spyder" app in the installation folder or your programs menu, which will provide a nice user interface. On the department astro linux machines, you can simply type `spyder` in the command prompt after you have activated `unc_anaconda` and your virtualenv `astro` (for details see instructions for setup). Spyder may take a while to start up, because of all the python libraries it is loading.
 
 ![Screenshot of Spyder](images/spyder.png)
 
