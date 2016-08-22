@@ -80,26 +80,7 @@ something else if we wanted to, but `origin` is by far the most common choice.
 Once the nickname `origin` is set up, `git push origin master` will push the changes from
 our local repository to the repository on GitHub (but don't type it yet)
 
-## Password Managers
-If your operating system has a password manager configured, `git push` will
-try to use it when it needs your username and password.  For example, this
-is the default behavior for Git Bash on Windows. If you want to type your
-username and password at the terminal instead of using a password manager,
-type:
-```
-$ unset SSH_ASKPASS
-```
-
-in the terminal, before you run `git push`.  Despite the name, [git uses
-`SSH_ASKPASS` for all credential
-entry](http://git-scm.com/docs/gitcredentials#_requesting_credentials), so
-you may want to unset `SSH_ASKPASS` whether you are using git via SSH or
-https.
-You may also want to add `unset SSH_ASKPASS` at the end of your `~/.bashrc`
-to make git default to using the terminal for usernames and passwords.
-
 You can now push to the respository on github. Note we omit the `-u` in the github instructions because it assumes you won't change the branches you are pushing/pulling 
-
 
 ```
 $ git push origin master
