@@ -2,3 +2,5 @@
 | :---- |:----:| ----:|
 
 # 5. Branches
+
+![The Git Staging Area](fig/git-staging-area.png)
