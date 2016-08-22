@@ -28,7 +28,6 @@ The star indicates we are still currently in the master branch of our repository
 
 ```
 $ git checkout experimental
-$ git branch
 Switched to branch 'experimental'
 ```
 
