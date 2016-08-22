@@ -25,8 +25,6 @@ $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 
 Replace 'vlad' with the Owner's username.
 
-![After Creating Clone of Repository](fig/github-collaboration.png)
-
 Now both the Collaborator and the Owner have a local copy of the master branch of the repository. However neither of them should make changes to the master, instead they should work on personal branches. To protect the master from getting unreviewed changes, you can protech your master branch. To do this
 
 1. Owner should navigate to the main page of the repository on github.
