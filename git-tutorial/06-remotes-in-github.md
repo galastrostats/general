@@ -138,5 +138,5 @@ In this section we learned about creating a remote repository on GitHub, but whe
 GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
 you tried to link your local and remote repositories? 
 
-This is the topic of the next lesson. 
+Conflicts between versions of repo will be discussed in future lessons.
 
