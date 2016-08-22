@@ -126,41 +126,63 @@ It is so a planet!
 A planet with a charming heart on its surface; What's not to love?
 ```
 
-Meanwhile, we get some input from Dracula that we aren't sure about including, so we create a dracula branch.
+Meanwhile, we get some input from Wolfman that we aren't sure about including, so we create a wolfman branch.
 
 ```
-$ git branch dracula
-$ git checkout dracula
+$ git branch wolfman
+$ git checkout wolfman
 M       pluto.txt
-Switched to branch 'dracula'
+Switched to branch 'wolfman'
 ```
 
-The "M" next to pluto.txt reminds us that there is a modified file in the master branch that was never added and committed. Oops! Let's delete the dracula branch, fix up the master branch, and start over.
+The "M" next to pluto.txt reminds us that there is a modified file in the master branch that was never added and committed. Oops! Let's delete the wolfman branch, fix up the master branch, and start over.
 
 ```
 $ git checkout master
 M       pluto.txt
 Switched to branch 'master'
-$ git branch -d dracula
-Deleted branch dracula (was 436c68b).
+$ git branch -d wolfman
+Deleted branch wolfman (was 436c68b).
 $ git add pluto.txt
 $ git commit -m "merged experimental branch into master"
 [master b36f548] merged experimental branch into master
  1 file changed, 1 insertion(+)
-$ git branch dracula
-$ git checkout dracula
-Switched to branch 'dracula'
+$ git branch wolfman
+$ git checkout wolfman
+Switched to branch 'wolfman'
 ```
 
 Just to be sure, we can type `git status`.
 
 ```
 $ git status
-On branch dracula
+On branch wolfman
 nothing to commit, working tree clean
 ```
 
-Now let's add Dracula's comments, and move him up the author list.
+Now we add Wolfman's input and move him up the author list.
 
+```
+$ vi pluto.txt
+$ cat pluto.txt
+Co-signers (alphabetical order for now): Wolfman, Dracula, Frankenstein, Mummy
+It is so a planet!
+A planet with a heart on its surface; what's not to love?
+Technically, Pluto and Charon are a double planet orbiting a center of mass outside either body. However there are several other good moons for howling at.
+```
+
+Don't forget to add and commit the changes. You can use the shortcut `-a` to do it in one step.
+
+```
+$ git commit -a -m "Wolfman says Pluto and Charon are both planets"
+[wolfman c52e999] Wolfman says Pluto and Charon are both planets
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+```
+
+After some discussion with the other co-signers, everyone agrees that it's worth crusading for both Pluto and Charon to be planets. Let's merge the changes into master.
+
+```
+$ git checkout master
+$ git merge wolfman
 
 
