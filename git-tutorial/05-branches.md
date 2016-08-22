@@ -39,10 +39,10 @@ $ git branch
   master
 ```
 
-Suppose we have some updated information on pluto suggesting it has a heart on its surface, but we aren't sure that we will want to include this detail in our final report. Let's make some updates to the `pluto.txt` file in this experimental branch:
+Suppose we have some updated information on pluto suggesting it has a heart on its surface, but we aren't sure that we will want to include this detail in our final document. Let's include it in the `pluto.txt` file in our experimental branch:
 
 ```
-$ vi pluto.txt          # add "A planet with a charming heart on its surface; What's not to love?"
+$ vi pluto.txt
 $ cat pluto.txt
 It is so a planet!
 A planet with a charming heart on its surface; What's not to love?
@@ -79,9 +79,9 @@ It is so a planet!
 
 As you can see, the master branch does not include our updated notes about Pluto. 
 
-Now you decide you are pretty confident that the heart in Pluto is charming, so you want to fold in all of the changes you've made on the experimental branch into the master branch. 
-To merge two branches together, ensure you are located in the branch you want to fold changes *into*. 
-In this case, we want to be in the master branch:
+Now we decide we are pretty confident that Pluto's heart is charming, so we want to fold all of the changes we've made on the experimental branch into the master branch. 
+To merge two branches together, ensure you are on the branch you want to fold changes *into*. 
+In this case, we want to be on the master branch:
 
 ```
 $ git branch
@@ -113,3 +113,54 @@ We no longer have a use for our experimental branch. To delete a branch you don'
 $ git branch -d experimental
 Deleted branch experimental (was c5d6cba).
 ```
+
+It's possible of course that we may be still trying to decide about some changes but others must be made right away. Suppose we want to list all the co-signers of our treatise on Pluto, but we don't know yet what everyone will contribute so we aren't sure about the order of names. You can be diplomatic and list the whole team in alphabetical order until the final version. 
+
+```
+$ git branch
+* master
+$ vi pluto.txt
+$ cat pluto.txt
+Co-signers (alphabetical order for now): Dracula, Frankenstein, Mummy, and Wolfman
+It is so a planet!
+A planet with a charming heart on its surface; What's not to love?
+```
+
+Meanwhile, we get some input from Dracula that we aren't sure about including, so we create a dracula branch.
+
+```
+$ git branch dracula
+$ git checkout dracula
+M       pluto.txt
+Switched to branch 'dracula'
+```
+
+The "M" next to pluto.txt reminds us that there is a modified file in the master branch that was never added and committed. Oops! Let's delete the dracula branch, fix up the master branch, and start over.
+
+```
+$ git checkout master
+M       pluto.txt
+Switched to branch 'master'
+$ git branch -d dracula
+Deleted branch dracula (was 436c68b).
+$ git add pluto.txt
+$ git commit -m "merged experimental branch into master"
+[master b36f548] merged experimental branch into master
+ 1 file changed, 1 insertion(+)
+$ git branch dracula
+$ git checkout dracula
+Switched to branch 'dracula'
+```
+
+Just to be sure, we can type `git status`.
+
+```
+$ git status
+On branch dracula
+nothing to commit, working tree clean
+```
+
+Now let's add Dracula's comments, and move him up the author list.
+
+
+
