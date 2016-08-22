@@ -105,7 +105,7 @@ Fast-forward
 
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on GitHub) are back in sync.
 
-In practice, is is better for the owner to also push to a branch of the 
+The owner can now make a different branch, `saturn` and repeat the pull request. 
 
 ## A Basic Collaborative Workflow
 
@@ -114,15 +114,18 @@ repository you are collaborating on, so you should `git pull` before making
 any changes. The basic collaborative workflow would be:
 
 * update your local repo with `git pull origin master`,
+* update any local branches, *note you don't want to merge into master, but merge master into the branch you have control over*
+    1. `git checkout branch1`
+    2. `git merge master`
 * make your changes and stage them with `git add`,
 * commit your changes with `git commit -m`, and
-* upload the changes to GitHub with `git push origin master`
+* upload the changes to GitHub with `git push origin branch1`
 
 It is better to make many commits with smaller changes rather than
 of one commit with massive changes: small commits are easier to
 read and review.
 
-Note `git pull` is really equivalent to runnign `git fetch` and then `git merge`, where `git fetch` updates your so-called "remote tracking branches" and `git merge` combines the tow brances that were created locally and remotely (the latter is the "origin" branch in the local system nomenclature)
+Note `git pull` is really equivalent to runnign `git fetch` and then `git merge`, where `git fetch` updates your so-called "remote tracking branches" and `git merge` combines the two brances that were created locally and remotely (the latter is the "origin" branch in the local system nomenclature)
 
 ## Switch Roles and Repeat
 
