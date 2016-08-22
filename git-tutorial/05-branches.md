@@ -79,95 +79,37 @@ It is so a planet!
 
 As you can see, the master branch does not include our updated notes about Pluto. 
 
-We are pretty confident that the heart in Pluto is charming, so let's fold in all of the changes that we've made on the experimental branch into our master branch. 
-To merge two branches together, ensure you are located in the branch you want to fold changes into. 
-In our case, we want to be in the master branch:
+Now you decide you are pretty confident that the heart in Pluto is charming, so you want to fold in all of the changes you've made on the experimental branch into the master branch. 
+To merge two branches together, ensure you are located in the branch you want to fold changes *into*. 
+In this case, we want to be in the master branch:
 
-~~~ {.bash}
+```
 $ git branch
-~~~
-
-~~~ {.output}
   experimental
 * master
-~~~
+```
 
-Excellent, we are in the right place. To fold the experimental branch into the master branch, we use the `merge` function of git followed by the name of the branch we want to fold in:
+Excellent, we are on the right branch. To fold the experimental branch into the master branch, we use the `git merge` command followed by the name of the branch we want to fold *in* to the current branch:
 
-~~~ {.bash}
+```
 $ git merge experimental
-~~~
-
-~~~ {.output}
 Updating ee530d7..c5d6cba
 Fast-forward
  pluto.txt | 1 +
  1 file changed, 1 insertion(+)
-~~~
+```
 
-Now if we look at our `pluto.txt` file, we see our updates from the experimental branch:
+Now if we look at our `pluto.txt` file, we see the updates from the experimental branch in the master branch version:
 
-~~~ {.bash}
+```
 $ cat pluto.txt
-~~~
-
-~~~ {.output}
 It is so a planet!
 A planet with a charming heart on its surface; What's not to love?
-~~~
-
-Now let's push these changes up to github:
-
-~~~ {.bash}
-$ git push origin master
-~~~ 
-
-~~~ {.output}
-Total 0 (delta 0), reused 0 (delta 0)
-To https://github.com/erdavenport/planets.git
-   a822910..10ed071  master -> master
-~~~
-
-> ## Pushing all branches to GitHub {.callout}
-> If you've been working on multiple branches and want to push commits from all branches to GitHub, you can use the following syntax rather than pushing each branch individually:  
->
-> `git push --all origin`
-
-
-Branches can be difficult to visualize in your head. GitHub has a nice feature that will let you examine your commits on each branch. Find the graphs link of your repository home page:
-
-![Locating Graphs on GitHub](fig/github-find-graphs-image.png)  
-
-You can see a graphical representation of your commit and branch history here. If you hover your cursor over the dots (commits), a box will display the commit message and ID. Your different branches are shown in different colors, with an arrow indicating when you merged two branches together.
-
-![Viewing Branch and Commit History on GitHub](fig/github-graphs-image.png)
+```
 
 We no longer have a use for our experimental branch. To delete a branch you don't need, you can use the `-d` flag of `git branch`:
 
-~~~ {.bash}
+```
 $ git branch -d experimental
-~~~
-
-~~~ {.output}
 Deleted branch experimental (was c5d6cba).
-~~~
-
-> ## Deleting a remote branch {.callout}
-> You've deleted your experimental branch locally, but if you look on your GitHub page, you'll see it still exists, even if you `git push --all origin`. 
-> To delete the branch remotely, you should use the syntax:    
->
-> `git push origin <local-branch>:<remote-branch>`  
->
-> In our example this is: `git push origin experimental:experimental`.
-> You can also use the shorthand version: `git push origin :experimental`. 
-> Using this notation, Git assumes you are listing the remote branch and want to push the branch you are currently in on the local repo. 
-> Essentially you are pushing "nothing" to the remote branch, which erases it.
-
-
-
-> ## Creating and Merging Branches {.challenge}
->
-> In your `bio` repository you made earlier, do the following:  
-> 1. Create a branch called `grad_school`  
-> 2. Create a file called `thesis` and write one line about your research (or something about science if you don't know what you'll be researching yet)  
-> 3. Merge those changes back to the master branch of `bio`. 
+```
