@@ -43,7 +43,7 @@ On your laptop, run `git config` with the same answers used above for your linux
 
 ### Source
 
-This tutorial was adapted from [Software Carpentry's](http://software-carpentry.org/) [Version control with git](http://swcarpentry.github.io/git-novice/) under a [Creative Commons Attribution license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
+This tutorial was adapted from [Software Carpentry's](http://software-carpentry.org/) [Version control with git](http://swcarpentry.github.io/git-novice/) and Software Carpentry's branching lesson as provided by [erdavenport](https://github.com/erdavenport/git-lessons), both under a [Creative Commons Attribution license (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)
 
 ## 4. Additional Resources
 
