@@ -4,10 +4,6 @@ To install the user-friendly Anaconda python interface on your laptop and learn 
 
 ## Part I: Installation
 
-We will use python bundled with a number of scientific libraries (Numpy, Scipy, matplotlib, etc) in an installation called "Anaconda". Follow the instructions to [download and install Anaconda for your operating system from the official documentation](https://docs.continuum.io/anaconda/install). To determine whether your system has a 32-bit or 64-bit processor, see the following links: [Mac Users](http://support.apple.com/kb/HT3696) or [Windows Users](http://support.microsoft.com/kb/827218).
-
-### Install packages
-
 See installation instructions for your [personal laptop](https://github.com/galastrostats/general/blob/master/python-setup-laptop.md) or a [department workstation](https://github.com/galastrostats/general/blob/master/python-setup-linux.md)
     
 ## Part II: Getting Started and Recording Your Work
