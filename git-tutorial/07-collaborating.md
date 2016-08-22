@@ -1,4 +1,4 @@
-| [⬅ 6. Remotes in github](06-remotes-in-github.md) | [Table of Contents](00-contents.md) | [8. Dealing with conflicts ➡](08-conflicts.md) |
+| [⬅ 6. Setting up a remote repository in GitHub](06-remotes-in-github.md) | [Table of Contents](00-contents.md) | [8. Dealing with conflicts ➡](08-conflicts.md) |
 | :---- |:----:| ----:|
 
 # 7. Collaborating
