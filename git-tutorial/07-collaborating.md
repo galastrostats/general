@@ -29,7 +29,7 @@ $ git clone https://github.com/vlad/planets.git ~/Desktop/vlad-planets
 Replace 'vlad' with the Owner's username.
 
 ### Protect master
-Now both the Collaborator and the Owner have a local copy of the master branch of the repository. However neither of them should make changes to the master, instead they should work on personal branches. To protect the master from getting unreviewed changes, you can protech your master branch. To do this
+Now both the Collaborator and the Owner have a local copy of the master branch of the repository. However neither of them should make changes to the master, instead they should work on personal branches. To protect the master from getting unreviewed changes, you can protect your master branch. To do this
 
 1. Owner should navigate to the main page of the repository on github.
 2. Under your repository name, click Settings.
@@ -170,11 +170,14 @@ Now comments appear as a bubble in the commits summary.
 Jennifer is collaborating on her Python script with her colleagues and
 realises her last commit to the group repository is wrong and wants to
 undo it.  Jennifer needs to undo correctly so everyone in the group
-repository gets the correct change.  `git revert [wrong commit ID]`
+repository gets the correct change.  `git revert [first wrong commit ID]`
 will make a new commit that undoes Jennifer's previous wrong
-commit. Therefore `git revert` is different than `git checkout [commit
-ID]` because `checkout` is for local changes not committed to the
-group repository.  Below are the right steps and explanations for
+commits back to and including that ID, but only within her local copy. She will still
+need to git push the changes to GitHub. Note that `git revert` is 
+different than `git checkout [prior commit ID]` because `checkout` literally
+goes back to an earlier copy, leaving the user in a detached head state
+(intended only for exploring prior to a `git reset --hard [prior commit ID]`).  
+Below are the right steps and explanations for
 Jennifer to use `git revert`, what is the missing command?
 
 
