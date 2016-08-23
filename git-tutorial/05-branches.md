@@ -242,7 +242,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 At this point if we open up `pluto.txt` with vi we'll see that both Wolfman's and Dracula's versions of the last line are shown as choices, whereas Wolfman's new author order is assumed to be correct. Git recognizes that the author order in the dracula branch was from before the wolfman branch was created, so the author order from the wolfman branch takes precedence. However, we have to actually edit the file to remove Dracula's bloodthirsty last line, because git isn't sure whether Wolfman's or Dracula's last lines should be considered better. Again, using `git diff` before git merge would reveal all the differences, allowing us to perform edits manually before merging.
 
-Let's try this now (our merge failed anyway).
+Let's use diff now.
 
 ```
 $ git diff master dracula
