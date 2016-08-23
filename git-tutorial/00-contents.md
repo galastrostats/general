@@ -39,7 +39,6 @@ On your laptop, run `git config` with the same answers used above for your linux
 5. [Working with branches](05-branches.md)
 6. [Setting up a remote repository in GitHub](06-remotes-in-github.md)
 7. [Collaborating](07-collaborating.md)
-8. [Dealing with conflicts](08-conflicts.md)
 
 ### Source
 
