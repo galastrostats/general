@@ -9,10 +9,11 @@ only thing missing is to copy changes from one repository to another.
 
 Systems like Git allow us to move work between any two repositories.  In
 practice, though, it's easiest to use one copy as a central hub, and to keep it
-on the web rather than on someone's laptop.  Most programmers use hosting
+on the web rather than on someone's laptop. In fact, by using a central hub you
+can easily store your work done on one machine (say, at home) and load it onto
+another machine (say, in a computer lab) in exactly the state you left it. Most programmers use hosting
 services like [GitHub](http://github.com), [BitBucket](http://bitbucket.org) or
-[GitLab](http://gitlab.com/) to hold those master copies; we'll explore the pros
-and cons of this in the final section of this lesson.
+[GitLab](http://gitlab.com/) to hold those master copies; we will use GitHub.
 
 Let's start by sharing the changes we've made to our current project with the
 world.  Log in to GitHub, then click on the icon in the top right corner to
@@ -137,6 +138,4 @@ How is "git push" different from "git commit"?
 In this section we learned about creating a remote repository on GitHub, but when you initialized your
 GitHub repo, you didn't add a README.md or a license file. If you had, what do you think would have happened when
 you tried to link your local and remote repositories? 
-
-Conflicts between versions of repo will be discussed in future lessons.
 
