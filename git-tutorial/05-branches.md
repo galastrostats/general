@@ -259,9 +259,11 @@ index c6bbb49..bb7d4da 100644
 +And hearts have lots of blood, yum.
 ```
 
-`git diff` doesn't judge which differences to treat as conflicts, it just shows all of them. Let's keep Wolfman's author order, but make Dracula feel he was heard by including a less bloodthirsty version of his contribution. 
+`git diff` doesn't judge which differences to treat as conflicts, it just shows all of them.  
 
-To complete the merge that failed, we just have to edit the conflicts and commit.
+To complete the merge that failed, we now have to edit the file with the conflicts and commit. Notice that git has modified `pluto.txt` wherever it believed there was a conflict. Wolfman's change — the already merged into master — is preceded by <<<<<<<. Git has then inserted ======= as a separator between the conflicting changes and marked the end of the content from Dracula with >>>>>>>. (The string of letters and digits after that marker identifies the commit.)
+
+It is now up to us to edit this file to remove these markers and reconcile the changes. We can do anything we want: keep the change made in the local repository, keep the change made in the remote repository, write something new to replace both, or get rid of the change entirely. Let's keep Wolfman's author order, but make Dracula feel he was heard by including a less bloodthirsty version of his contribution.
 
 ```
 $ vi pluto.txt
