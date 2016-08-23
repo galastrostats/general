@@ -1,9 +1,7 @@
 # Python tutorial
 
-1. [Python tutorial at learnpython.org](http://www.learnpython.org).
-    - [Companion notes](http://user.physics.unc.edu/~sheila/tutorials/CompanionLearnPythonOrg.pdf)
-2. Read and test Appendix A in Ivezic et. al.
+Complete the [Python tutorial at learnpython.org](http://www.learnpython.org) using these [Companion notes](http://user.physics.unc.edu/~sheila/tutorials/CompanionLearnPythonOrg.pdf). Only the tutorial sections indicated in the notes are required.
 
 ## References
 
-1. A handy one page [Python Quick Reference](http://user.physics.unc.edu/~sheila/PythonQuickReference.pdf)
+Here is a handy one page [Python Quick Reference](http://user.physics.unc.edu/~sheila/PythonQuickReference.pdf)
