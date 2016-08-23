@@ -121,10 +121,12 @@ any changes. The basic collaborative workflow would be:
 * update any local branches, *note you don't want to merge into master, but merge master into the branch you have control over*
     1. `git checkout branch1`
     2. `git merge master`
-* make your changes and stage them with `git add`,
+* make your changes\*\* and stage them with `git add`,
 * commit your changes with `git commit -m`, and
 * upload the changes to GitHub with `git push origin branch1`
 * once your branch features are complete, submit a pull request
+
+\*\* Frequently interrupt this process to update your master branch from github and merge it into your working branch (`branch1`).
 
 ### Notes about branches:
 1. As all collaborators will have access to all the branches, make sure that your branch names reflect the kinds of changes that you intend to make. 
