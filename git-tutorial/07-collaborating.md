@@ -34,7 +34,7 @@ Now both the Collaborator and the Owner have a local copy of the master branch o
 1. Owner should navigate to the main page of the repository on github.
 2. Under your repository name, click Settings.
 3. In the left menu, click Branches.
-4  Under Protected Branches, select the master branch.
+4. Under Protected Branches, select the master branch.
 5. Select Protect this branch, and click Save changes.
 
 ## Make changes to a branch
