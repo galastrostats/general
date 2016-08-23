@@ -167,7 +167,7 @@ code in the diff record, a blue comment icon (+ symbol) appears, which you can c
 
 The Collaborator posts comments and suggestions using the GitHub interface.
 
-Now comments appear as a bubble in the commits summary. 
+Now the comment appears as a bubble in the commits summary. Github will also send a notification email about the comment, but sometimes these emails are delayed.
 
 ## Reverting a Commit
 
