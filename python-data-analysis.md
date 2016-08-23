@@ -1,10 +1,10 @@
-# Python Basic Data Analysis Tutorial using Anaconda
+# Python Basic Data Analysis Tutorial
 
-To install the user-friendly Anaconda python interface on your laptop and learn to load, manipulate, and plot data, complete the following tutorial.
+To learn to load, manipulate, and plot data, complete the following tutorial.
 
-If you want to use Python in a terminal instead of using the graphical Spyder IDE look at these [alternative insructions and commands](https://github.com/galastrostats/general/blob/master/ipython-terminal.md). 
+The tutorial assumes you will use the graphical Spyder interface in the Anaconda distribution of python, and explains how to install Anaconda. If you want to use Python in a terminal instead, look at these [alternative insructions and commands](https://github.com/galastrostats/general/blob/master/ipython-terminal.md) for use with ipython on the linux command line. 
 
-## Part I: Installation
+## Part I: Installation of Anaconda
 
 See installation instructions for your [personal laptop](https://github.com/galastrostats/general/blob/master/python-setup-laptop.md) or a [department workstation](https://github.com/galastrostats/general/blob/master/python-setup-linux.md)
     
