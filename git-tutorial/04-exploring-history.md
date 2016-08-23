@@ -190,7 +190,11 @@ If you forget `mars.txt` in that command, git will tell you that "You are in
 'detached HEAD' state." In this state, you shouldn't make any changes.
 You can fix this by reattaching your head using `git checkout master`
 
-You can go back to an entire previous status, and start a new branch from there. For more details see the next chapter.
+If you were trying to revert not just one file but a whole commit, then you want to
+go back to master (`git checkout master`) and use either `git reset --hard [commit ID]` or `git revert [commit ID]`. 
+The former will erase all commits after that ID while the latter will make a new commit undoing your changes starting
+from that ID, thus preserving the history of wrong commits. Alternatively, 
+you can start a new branch from an entire previous status of the master branch when you're in the detached HEAD state. Just don't make changes to master when in that state.
 
 It's important to remember that
 we must use the commit number that identifies the state of the repository
@@ -232,7 +236,7 @@ let her recover the last committed version of her Python script called
 1. `$ git checkout HEAD`
 2. `$ git checkout HEAD data_cruncher.py`
 3. `$ git checkout HEAD~1 data_cruncher.py`
-4. `$ git checkout <unique ID of last commitdata_cruncher.py`
+4. `$ git checkout <unique ID of last commit> data_cruncher.py`
 5. Both 2 and 4
 
 ## Getting Rid of Staged Changes
