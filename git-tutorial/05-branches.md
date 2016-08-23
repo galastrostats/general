@@ -80,6 +80,7 @@ It is so a planet!
 As you can see, the master branch does not include our updated notes about Pluto. 
 
 Now we decide we are pretty confident that Pluto's heart is charming, so we want to fold all of the changes we've made on the experimental branch into the master branch. 
+
 To merge two branches together, ensure you are on the branch you want to fold changes *into*. 
 In this case, we want to be on the master branch:
 
@@ -160,15 +161,15 @@ On branch wolfman
 nothing to commit, working tree clean
 ```
 
-Now we add Wolfman's input and move him up the author list.
+Now we can add Wolfman's input and move him up the author list.
 
 ```
 $ vi pluto.txt
 $ cat pluto.txt
-Co-signers (alphabetical order for now): Wolfman, Dracula, Frankenstein, Mummy
+Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
 It is so a planet!
 A planet with a heart on its surface; what's not to love?
-Technically, Pluto and Charon are a double planet orbiting a center of mass outside either body. However there are several other good moons for howling at.
+Pluto and Charon are two planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
 ```
 
 Don't forget to add and commit the changes. You can use the shortcut `-a` to do it in one step.
@@ -179,10 +180,71 @@ $ git commit -a -m "Wolfman says Pluto and Charon are both planets"
  1 file changed, 2 insertions(+), 1 deletion(-)
 ```
 
+Meanwhile, Dracula sends us his version of `pluto.txt`, so let's return to master and create a dracula branch to hold his version.
+
+```
+$ git checkout master
+$ git branch dracula
+$ git checkout dracula
+$ vi pluto.txt
+$ cat pluto.txt
+Co-signers (alphabetical order for now): Dracula, Frankenstein, Mummy, and Wolfman
+It is so a planet!
+A planet with a heart on its surface; what's not to love
+And hearts have lots of blood, yum.
+$ git commit -a -m "Dracula's version"
+```
+
 After some discussion with the other co-signers, everyone agrees that it's worth crusading for both Pluto and Charon to be planets. Let's merge the changes into master.
+
+First, we realize that we don't remember what all Wolfman's changes were. This is a good time for `git diff`.
+
+```
+$ git checkout master
+$ git diff master wolfman
+diff --git a/pluto.txt b/pluto.txt
+index 7b6b006..e1ea309 100644
+--- a/pluto.txt
++++ b/pluto.txt
+@@ -1,3 +1,4 @@
+-Co-signers (alphabetical order for now): Dracula, Frankenstein, Mummy, and Wolfman
++Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
+ It is so a planet!
+ A planet with a heart on its surface; what's not to love
++Pluto and Charon are two planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
+```
+
+These changes all look good, so let's proceed with the merge.
 
 ```
 $ git checkout master
 $ git merge wolfman
+Updating 10713bc..6c0e17c
+Fast-forward
+ pluto.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+$ git status
+On branch master
+nothing to commit, working tree clean
+```
 
+Notice that git went ahead with all the changes and committed the merge, saying "Fast-forward". This term means that there had been no changes to master since the branch wolfman was created, so git assumes any changes are not conflicts and accepts them all. If you want to avoid accepting changes without getting to look at them, always use `git diff` before `git merge`!
 
+Now we decide to merge dracula into master as well, knowing that the dracula branch split off *before* the latest merge changed the master branch. This time git is alert to potential conflicts.
+
+```
+$ git merge dracula
+Auto-merging pluto.txt
+CONFLICT (content): Merge conflict in pluto.txt
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+At this point if we open up `pluto.txt` with vi we'll see that both Wolfman's and Dracula's versions of the last line are shown as choices, whereas Wolfman's new author order is assumed to be correct. Git recognizes that the author order in the dracula branch was from before the wolfman branch was created, so the author order from Wolfman takes precedence. However, we have to actually edit the file to remove Dracula's bloodthirsty last line, because git isn't sure whether Wolfman's or Dracula's last lines should be considered better. Again, using `git diff` before git merge would reveal all the differences, in case you want to know.
+
+Let's try this now (our merge failed anyway).
+
+```
+$ git diff master dracula
+```
+
+The extra differences result because in the attempted merge, git already changed `pluto.txt` to show the conflicts.
