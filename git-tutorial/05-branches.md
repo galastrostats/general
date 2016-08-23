@@ -171,7 +171,7 @@ $ cat pluto.txt
 Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
 It is so a planet!
 A planet with a heart on its surface; what's not to love?
-Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon
+Pluto & Charon are 2 planets orbiting a center of mass outside either one -- no howling at Charon, it's not a moon
 ```
 
 Don't forget to add and commit the changes. You can use the shortcut `-a` to do it in one step.
@@ -213,7 +213,7 @@ index 72ab035..c6bbb49 100644
 +Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
  It is so a planet!
  A planet with a heart on its surface; what's not to love?
-+Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon
++Pluto & Charon are 2 planets orbiting a center of mass outside either one -- no howling at Charon, it's not a moon
 ```
 
 These changes all look good, so let's proceed with the merge.
@@ -255,7 +255,7 @@ index c6bbb49..bb7d4da 100644
 +Co-signers (alphabetical order for now): Dracula, Frankenstein, Mummy, and Wolfman
  It is so a planet!
  A planet with a heart on its surface; what's not to love?
--Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon
+-Pluto & Charon are 2 planets orbiting a center of mass outside either one -- no howling at Charon, it's not a moon
 +And hearts have lots of blood, yum.
 ```
 
@@ -267,7 +267,7 @@ $ cat pluto.txt
 Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
 It is so a planet!
 A planet with a heart on its surface; what's not to love?
-Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon
+Pluto & Charon are 2 planets orbiting a center of mass outside either one -- no howling at Charon, it's not a moon
 And hearts have lots of love.
 $ git commit -a -m "compromise version"
 [master b7ea33d] compromise version
