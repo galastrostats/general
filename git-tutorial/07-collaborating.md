@@ -162,3 +162,22 @@ code to comment, a blue comment icon appears to open a comment window.
 The Collaborator posts its comments and suggestions using GitHub interface.
 
 Now comments appear as a bubble in the commits summary. 
+
+## Reverting a Commit
+
+Jennifer is collaborating on her Python script with her colleagues and
+realises her last commit to the group repository is wrong and wants to
+undo it.  Jennifer needs to undo correctly so everyone in the group
+repository gets the correct change.  `git revert [wrong commit ID]`
+will make a new commit that undoes Jennifer's previous wrong
+commit. Therefore `git revert` is different than `git checkout [commit
+ID]` because `checkout` is for local changes not committed to the
+group repository.  Below are the right steps and explanations for
+Jennifer to use `git revert`, what is the missing command?
+
+
+1. ________ # Look at the git history of the project to find the commit ID
+2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
+3. `git revert [commit ID]`
+4. Type in the new commit message.
+5. Save and close
