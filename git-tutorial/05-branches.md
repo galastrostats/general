@@ -171,7 +171,7 @@ $ cat pluto.txt
 Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
 It is so a planet!
 A planet with a heart on its surface; what's not to love?
-Pluto and Charon are two planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
+Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
 ```
 
 Don't forget to add and commit the changes. You can use the shortcut `-a` to do it in one step.
@@ -213,7 +213,7 @@ index 72ab035..c6bbb49 100644
 +Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
  It is so a planet!
  A planet with a heart on its surface; what's not to love?
-+Pluto and Charon are two planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
++Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
 ```
 
 These changes all look good, so let's proceed with the merge.
@@ -255,8 +255,32 @@ index c6bbb49..bb7d4da 100644
 +Co-signers (alphabetical order for now): Dracula, Frankenstein, Mummy, and Wolfman
  It is so a planet!
  A planet with a heart on its surface; what's not to love?
--Pluto and Charon are two planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
+-Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
 +And hearts have lots of blood, yum.
 ```
 
-In this case git doesn't judge which differences to treat as conflicts, it just shows all of them.
+In this case git doesn't judge which differences to treat as conflicts, it just shows all of them. We decide to keep Wolfman's author order, but make Dracula feel his contribution was heard by including a less bloodthirsty version of it. To complete the merge, we just have to edit the conflicts and commit.
+
+```
+$ vi pluto.txt
+$ cat pluto.txt
+Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
+It is so a planet!
+A planet with a heart on its surface; what's not to love?
+Pluto & Charon are 2 planets orbiting a center of mass outside either body -- no howling at Charon, it's not a moon!
+And hearts have lots of love.
+$ git commit -a -m "compromise version"
+[master b7ea33d] compromise version
+```
+
+Finally, we can clean up.
+
+```
+$ git branch -d dracula
+Deleted branch dracula (was d409994).
+$ git branch -d wolfman
+Deleted branch wolfman (was 9ecedff).
+```
+
+A nice feature of git is that it will complain if you try to delete these branches without merging their changes into master.
+
