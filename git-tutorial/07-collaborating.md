@@ -38,11 +38,11 @@ Now both the Collaborator and the Owner have a local copy of the master branch o
 5. Select Protect this branch, and click Save changes.
 
 ## Make changes to a branch
-Make a branch of your local master and switch to it
+Make a branch of your (Wolfman's) local master and switch to it
 
 ```
-git branch pluto
-git checkout pluto
+git branch wolfman-pluto
+git checkout wolfman-pluto
 ```
 
 The Collaborator can now make a change in her clone of the Owner's repository,
@@ -52,12 +52,16 @@ exactly the same way as we've been doing before:
 $ cd ~/Desktop/vlad-planets
 $ vi pluto.txt
 $ cat pluto.txt
+Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
 It is so a planet!
+A planet with a heart on its surface; what's not to love?
+And hearts have lots of love.
+Pluto & Charon are 2 planets orbiting a center of mass outside either one -- no howling at Charon, it's not a moon
 ```
 
 ```
 $ git add pluto.txt
-$ git commit -m "Some notes about Pluto"
+$ git commit -m "Fixed order of statements"
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
 ```
@@ -66,14 +70,14 @@ $ git commit -m "Some notes about Pluto"
 Then push the change to your branch on the *Owner's repository* on GitHub:
 
 ```
-$ git push origin pluto
+$ git push origin wolfman-pluto
 Counting objects: 4, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (2/2), done.
 Writing objects: 100% (3/3), 306 bytes, done.
 Total 3 (delta 0), reused 0 (delta 0)
 To https://github.com/vlad/planets.git
-   9272da5..29aba7c  pluto -> pluto
+   9272da5..29aba7c  wolfman-pluto -> wolfman-pluto
 ```
 
 Take a look to the Owner's repository on its GitHub website now (maybe you need
@@ -83,8 +87,8 @@ Collaborator.
 ## Submit a pull request
 Now we need to merge the changes. To do this, the Collaborator submits a pull request to the owner. To do this
 
-1. Switch to new branch in Github
-2. Click on the new pull request
+1. Switch to the new branch (`wolfman-pluto`) in Github.
+2. Click on the new pull request.
 
 The Collaborator will then be given a review page that presents you with an overview of the changes, and a place to write a comment. After filling them in you can click `Create pull request`
 
@@ -109,7 +113,7 @@ Fast-forward
 
 Now the three repositories (Owner's local, Collaborator's local, and Owner's on GitHub) are back in sync.
 
-The owner can now make a different branch, `saturn` and repeat the pull request. 
+The owner can now make a different branch, `vlad-saturn` and repeat the pull request. 
 
 ## A Basic Collaborative Workflow
 
@@ -119,14 +123,14 @@ any changes. The basic collaborative workflow would be:
 
 * update your local repo with `git pull origin master`,
 * update any local branches, *note you don't want to merge into master, but merge master into the branch you have control over*
-    1. `git checkout branch1`
+    1. `git checkout my-branch1`
     2. `git merge master`
 * make your changes\*\* and stage them with `git add`,
 * commit your changes with `git commit -m`, and
-* upload the changes to GitHub with `git push origin branch1`
+* upload the changes to GitHub with `git push origin my-branch1`
 * once your branch features are complete, submit a pull request
 
-\*\* Frequently interrupt this process to update your master branch from github and merge it into your working branch (`branch1`).
+\*\* Frequently interrupt this process to update your master branch from github and merge it into your working branch (`my-branch1`).
 
 ### Notes about branches:
 1. As all collaborators will have access to all the branches, make sure that your branch names reflect the kinds of changes that you intend to make. 
