@@ -115,6 +115,10 @@ Now the three repositories (Owner's local, Collaborator's local, and Owner's on 
 
 The owner can now make a different branch, `vlad-saturn` and repeat the pull request. 
 
+### Switch Roles and Repeat
+
+If time permits, switch Collaborator/Owner and repeat the whole process.
+
 ## A Basic Collaborative Workflow
 
 In practice, it is good to be sure that you have an updated version of the
@@ -144,10 +148,6 @@ read and review.
 2. Version control's ability to merge conflicting changes is another reason users tend to divide their programs and papers into multiple files instead of storing everything in one large file. There's another benefit too: whenever there are repeated conflicts in a particular file, the version control system is essentially trying to tell its users that they ought to clarify who's responsible for what, or find a way to divide the work up differently.
 
 Note `git pull` is really equivalent to running `git fetch` and then `git merge`, where `git fetch` updates your so-called "remote tracking branches" and `git merge` combines the two brances that were created locally and remotely (the latter is the "origin" branch in the local system nomenclature)
-
-## Switch Roles and Repeat
-
-Switch roles and repeat the whole process.
 
 ## Review Changes
 
