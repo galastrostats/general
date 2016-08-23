@@ -2,7 +2,7 @@
 
 To install the user-friendly Anaconda python interface on your laptop and learn to load, manipulate, and plot data, complete the following tutorial.
 
-If you want to use IPython in a terminal instead of Spyder look at these [alternative insructions and commands](https://github.com/galastrostats/general/blob/master/ipython-terminal.md). 
+If you want to use Python in a terminal instead of using the graphical Spyder IDE look at these [alternative insructions and commands](https://github.com/galastrostats/general/blob/master/ipython-terminal.md). 
 
 ## Part I: Installation
 
