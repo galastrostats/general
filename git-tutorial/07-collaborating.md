@@ -135,7 +135,7 @@ any changes. The basic collaborative workflow would be:
 ### Notes about branches:
 1. As all collaborators will have access to all the branches, make sure that your branch names reflect the kinds of changes that you intend to make. 
 2. If you have completed working on a branch and have merged all changes to master, you can delete it unless you plan to make further changes to reduce branch clutter (you can see the `delete branch` button at the bottom of successfull merged pull requests and delete local copies using `git branch -d branch_name`.
-3. Keep as many branches as you need concurrently, but don't forget to make sure they are as up to date as possibe with master - this will make it easier to merge your pull request.
+3. Keep as many branches as you need concurrently, but don't forget to make sure they are as up to date as possible with master - this will make it easier to merge any pull requests you submit on github.
 
 It is better to make many commits with smaller changes rather than
 of one commit with massive changes: small commits are easier to
