@@ -121,7 +121,7 @@ In practice, it is good to be sure that you have an updated version of the
 repository you are collaborating on, so you should `git pull` locally before making
 any changes. The basic collaborative workflow would be:
 
-* update your local repo with `git pull origin master`,
+* update your local repo with `git pull origin branch-name` for `branch-name=master, my-branch1` or any other branches you are working on.
 * update any local branches, *note you don't want to merge into master, but merge master into the branch you have control over*
     1. `git checkout my-branch1`
     2. `git merge master`
