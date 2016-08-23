@@ -151,7 +151,7 @@ Switch roles and repeat the whole process.
 
 The Owner push commits to the repository without giving any information
 to the Collaborator. How can the Collaborator find out what has changed with
-command line? And on GitHub?
+command line?
 
 ```
 git fetch origin
