@@ -1,6 +1,8 @@
 # Python Basic Data Analysis Tutorial using Anaconda
 
-To install the user-friendly Anaconda python interface on your laptop and learn to load, manipulate, and plot data, complete the following tutorial
+To install the user-friendly Anaconda python interface on your laptop and learn to load, manipulate, and plot data, complete the following tutorial.
+
+If you want to use IPython in a terminal instead of Spyder look at these [alternative insructions and commands](https://github.com/galastrostats/general/blob/master/ipython-terminal.md). 
 
 ## Part I: Installation
 
@@ -170,39 +172,3 @@ Suppose you wanted to subselect certain data from your dataset for a legitimate 
 You can join multiple selection criteria together by using the `&` sign. Let's say rather than zooming in on your plot like we did earlier, you decide you just want to plot the data that meet certain criteria, i.e., temperature ranges from 80-100 and humidity from 10-40. To start this selection, write `sel2=np.where((temperature > 80) & (temperature < 100))`. Go ahead and overplot this selection: `plot(humidity[sel2],temperature[sel2],'g*',markersize=15)`. You should find that the overplotted symbols range from 80-100 in temperature. Finish the selection to restrict the humidity range from 10-40. Overplot using 'r+' (red plus signs). Put this final combined selection into your Editor file.
 
 To finalize your plot so you can submit it with your program file, first retitle the plot with your name and the assignment, e.g., `Jane Doe Python Tutorial`, then save it (the zoomed in version with the bottom right point cut out and red plus signs overplotted) to a file. If you save to pdf it should be easy to print. Print your program out from the Editor window as well (you can do this directly from Spyder) and hand it in together with your plot.
-
-## Python in a terminal (IPython)
-
-You can complete the tutorial above in a terminal as well, using the ipython command line interface. To get started type the following in a terminal window
-
-    ipython --pylab
-    
-This starts ipython with some common libraries autoloaded, including:
-
-```python
-import numpy as np		# basic numerical analysis
-import matplotlib.pyplot as plt	# plotting
-```
-This is conveninent if you need to do some interactive work in a terminal, but it does remove some of the interactive features of spyder. You can recover some of the functionality using the following functions
-
-```python
-a = np.arange(20)
-print type(a)  # prints the data type of a
-print dir(a)  # prints all the variables and functions inside of object a
-print a.shape  # prints the dimension of a (rows, columns), only works on numpy arrays
-```
-
-In addition you can use a number of ipython specific commands to emulate of the features of spyder including
-```
-%hist  # prints history
-np.arange?  # prints doc string of function/object
-plt.plot??  # prints source of function/object
-```
-
-You can also use regular linux commands by prepending `!` to the beginning. For example
-```
-!ls
-!cd ~/
-```
-
-For more details type `%quickref` in an ipython terminal
