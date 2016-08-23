@@ -118,7 +118,7 @@ The owner can now make a different branch, `vlad-saturn` and repeat the pull req
 ## A Basic Collaborative Workflow
 
 In practice, it is good to be sure that you have an updated version of the
-repository you are collaborating on, so you should `git pull` before making
+repository you are collaborating on, so you should `git pull` locally before making
 any changes. The basic collaborative workflow would be:
 
 * update your local repo with `git pull origin master`,
@@ -141,7 +141,7 @@ It is better to make many commits with smaller changes rather than
 of one commit with massive changes: small commits are easier to
 read and review.
 
-Note `git pull` is really equivalent to runnign `git fetch` and then `git merge`, where `git fetch` updates your so-called "remote tracking branches" and `git merge` combines the two brances that were created locally and remotely (the latter is the "origin" branch in the local system nomenclature)
+Note `git pull` is really equivalent to running `git fetch` and then `git merge`, where `git fetch` updates your so-called "remote tracking branches" and `git merge` combines the two brances that were created locally and remotely (the latter is the "origin" branch in the local system nomenclature)
 
 ## Switch Roles and Repeat
 
