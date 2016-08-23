@@ -178,12 +178,12 @@ different than `git reset --hard [prior commit ID]` because `reset` literally
 goes back to an earlier copy and deletes all subsequent commits, whereas
 `revert` undoes all the wrong commits in a new commit so that the history
 of wrong commits is retained. The latter is preferable when collaborating. 
-Below are the right steps and explanations for
-Jennifer to use `git revert`, what is the missing command?
+Below are the right steps and explanations for Jennifer to use the `git revert` command
 
 
-1. ________ # Look at the git history of the project to find the commit ID
-2. Copy the ID (the first few characters of the ID, e.g. 0b1d055).
-3. `git revert [commit ID]`
+1. `git log` # Look at the git history of the project to find the commit ID
+2. Copy the ID (the first few characters of the ID, e.g. `0b1d055`).
+3. `git revert [commit ID]`.
 4. Type in the new commit message.
 5. Save and close
+6. Push changes to github
