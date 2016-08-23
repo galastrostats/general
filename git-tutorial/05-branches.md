@@ -259,7 +259,9 @@ index c6bbb49..bb7d4da 100644
 +And hearts have lots of blood, yum.
 ```
 
-In this case git doesn't judge which differences to treat as conflicts, it just shows all of them. We decide to keep Wolfman's author order, but make Dracula feel his contribution was heard by including a less bloodthirsty version of it. To complete the merge, we just have to edit the conflicts and commit.
+`git diff` doesn't judge which differences to treat as conflicts, it just shows all of them. Let's keep Wolfman's author order, but make Dracula feel he was heard by including a less bloodthirsty version of his contribution. 
+
+To complete the merge that failed, we just have to edit the conflicts and commit.
 
 ```
 $ vi pluto.txt
@@ -273,7 +275,7 @@ $ git commit -a -m "compromise version"
 [master b7ea33d] compromise version
 ```
 
-Finally, we can clean up.
+And finally we can clean up. (A nice feature of git is that it will warn you if you try to delete branches with changes that haven't yet been merged into master.)
 
 ```
 $ git branch -d dracula
@@ -281,6 +283,4 @@ Deleted branch dracula (was d409994).
 $ git branch -d wolfman
 Deleted branch wolfman (was 9ecedff).
 ```
-
-A nice feature of git is that it will complain if you try to delete these branches without merging their changes into master.
 
