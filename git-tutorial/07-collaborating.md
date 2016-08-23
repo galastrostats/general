@@ -172,11 +172,12 @@ realises her last commit to the group repository is wrong and wants to
 undo it.  Jennifer needs to undo correctly so everyone in the group
 repository gets the correct change.  `git revert [first wrong commit ID]`
 will make a new commit that undoes Jennifer's previous wrong
-commits back to and including that ID, but only within her local copy. She will still
-need to git push the changes to GitHub. Note that `git revert` is 
-different than `git checkout [prior commit ID]` because `checkout` literally
-goes back to an earlier copy, leaving the user in a detached head state
-(intended only for exploring prior to a `git reset --hard [prior commit ID]`).  
+commits back to and including that ID. This command affects her local copy, and she can
+then git push the changes to GitHub. Note that `git revert` is 
+different than `git reset --hard [prior commit ID]` because `reset` literally
+goes back to an earlier copy and deletes all subsequent commits, whereas
+`revert` undoes all the wrong commits in a new commit so that the history
+of wrong commits is retained. The latter is preferable when collaborating. 
 Below are the right steps and explanations for
 Jennifer to use `git revert`, what is the missing command?
 
