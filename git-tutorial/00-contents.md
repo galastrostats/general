@@ -12,7 +12,7 @@ Examples:
     git config --global user.email sheila@physics.unc.edu
     git config --global color.ui "auto"
     git config --global core.autocrlf false
-    git config --global core.editor emacs
+    git config --global core.editor vi
 
 Note `user.name` is not your GitHub username but rather your name.
 
