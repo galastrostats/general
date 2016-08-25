@@ -120,7 +120,7 @@ Extensive lists of additional functions can be found in the documentation for th
 4. [Astropy](http://docs.astropy.org/en/stable/)
 5. [AstroML](http://www.astroml.org/modules/classes.html)
 
-Moreover, there are dozens of other python libraries we will not be using -- someday you may create your own library!
+Moreover, there are thousands of other python libraries we will not be using -- someday you may create your own library!
 
 ### Logging Your Work
 Now that you've seen the basics, let's start recording your work. To do this, you should paste all your successful commands from the History or Console window into the Editor window, where they will become a program (sequence of commands). Paste in the output from your successful commands, inserting a `#` comment character before each line of output so that python does not try to interpret the output as a command. The program file in the Editor window will initially be labeled `.temp.py` but you should save it under the new name `tutorialanswers_yournamehere.py` in a different folder that you will use for all your python files. Also put a comment at the top with your name and date. Now you can check your answers by saving and running your program with the `Save` (disk icon) and `Run` (green play arrow icon) buttons at the top of Spyder. You will submit your final program file as part of your homework.
