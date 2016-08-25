@@ -51,6 +51,7 @@ For the purposes of this tutorial we will only use numpy, the basic numerical an
 
 ```python
 import numpy as np
+import matplotlib.pyplot as plt
 ```
 
 #### Interlude on Comments 
