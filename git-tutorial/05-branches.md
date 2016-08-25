@@ -7,6 +7,15 @@
 
 Often you may want to test out a new feature in some code. You may or may not decide you want to keep this feature and in the mean time you want to make sure you have a version of your script you know works. Branches are instances of a repository that can be edited and version controlled in parallel. You can think of it like making an entire copy of your repository folder that you can edit, without affecting the original versions of your scripts. The advantage of using git to do this (rather that making a repo_copy folder on your computer), is that you can use git tools to manage this code while it's under development and you have the ability to seamlessly merge in your changes into your originals.
 
+Create a file called pluto in your repository, add and commit it
+```
+$ vi pluto.txt
+$ cat pluto.txt
+It is so a planet!
+git add pluto.txt
+git commit -m "Added pluto info"
+```
+
 To see what branches are available in your repository, you can type `git branch`. First make sure you're in the planets directory in your home folder:
 
 ```
