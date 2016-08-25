@@ -391,8 +391,6 @@ repository (`git commit`):
 
 ![The Git Commit Workflow](fig/git-committing.png)
 
-# Do with partner
-
 ## Committing Multiple Files
 
 The staging area can hold changes from any number of files
