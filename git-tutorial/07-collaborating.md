@@ -94,7 +94,7 @@ The Collaborator will then be given a review page that presents an overview of t
 
 Now it is the owners job to review the proposed changes. On the owners gitub page, go to the pull requests tab. Click on the new pull request from the contributor to review the suggested changes, add comments if necessary.
 
-Once you are ready to merge you can click `Create a merge commit` to merge the branch with master on github. Both the owner and collaborator can now pull the changes from master on github to master in their local copies by entering
+Once you are ready to merge you can click `Merge pull request` to merge the branch with master on github. Both the owner and collaborator can now pull the changes from master on github to master in their local copies by entering
 
 ```
 $ git pull origin master
