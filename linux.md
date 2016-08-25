@@ -11,6 +11,12 @@ Before attempting to use a dept linux machine remotely from your laptop, you mus
     install putty from
     [here](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html). 
     Note: If you have git installed, you can also use `export DISPLAY=localhost:0.0` to use X-Win32 from your git bash instead of from putty, however the tutorial below is written for putty.
+
+    To make the export command permanent, you can try the following (the changes won't take place till you restart git bash):
+    ```
+    echo 'export DISPLAY=localhost:0.0' >> ~/.bashrc
+    ```
+
 2. Mac users: Install XQuartz from
     [here](http://xquartz.macosforge.org/landing/). An ssh client
     should be installed by default on OS X.
