@@ -49,7 +49,6 @@ The Collaborator can now make a change in her clone of the Owner's repository,
 exactly the same way as we've been doing before:
 
 ```
-$ cd ~/Desktop/vlad-planets
 $ vi pluto.txt
 $ cat pluto.txt
 Co-signers: Wolfman, Dracula, Frankenstein, and Mummy
