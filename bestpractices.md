@@ -10,9 +10,7 @@
 ## Strategies
 * Plan – consider likely rate-limiting steps and best methodology before starting
 * Modularize – test subcomponents, brainstorm sanity checks
-* **_python-specific:_** avoid "import" for scripts -- they will run at the time of import!
-   use the "def main" protocol if you want your code to be both callable like a
-   script and importable like a package -- see [this link](https://en.wikibooks.org/wiki/Python_Programming/Modules)
+* **_python-specific:_** avoid "import" for scripts -- they will run at the time of import! use the "def main" protocol if you want your code to be both callable like a script and importable like a package -- see [this link](https://en.wikibooks.org/wiki/Python_Programming/Modules)
 
 * Check variable values, types, array sizes by hand (print statements or interrupted run)
 * Don’t assume “running” = “working”
