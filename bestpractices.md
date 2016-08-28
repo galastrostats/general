@@ -15,10 +15,10 @@
 * Use meaningful variable names (more than one letter!) that are not too similar
 * Keep standard defaults: e.g. i, j reserved for integer loop counters
 * Replace hardwired numbers with constant names at top
-* Write comments (including at end of command sets, e.g. in if-then)
+* Write comments (including to bookend command sets, e.g. in if-then)
 * Take advantage of helpful visual appearance: white space, syntax highlighting
 * Avoid loops when unnecessary (possible tradeoff with understandability)
-* Manage I/O and memory
+* Manage I/O and memory (eliminate unnecessary large arrays)
 * Use print and system time statements to find out where code fails/slows
 
 ## Python-specific tips ##
