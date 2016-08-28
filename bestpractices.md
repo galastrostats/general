@@ -26,5 +26,5 @@
 * don't define a function in the middle of a program, even though python lets you -- doing this muddles whether variables are defined inside or outside the function
 * you can't use the variable name "lambda", it's a reserved word
 * standard indentation of code levels is 4 spaces; do not use tabs
-* where speed is essential use libraries written in C and/or set up to multi-thread
+* where speed is essential use libraries written in C and/or packages and functions set up to multi-thread
 
