@@ -9,7 +9,7 @@
 
 ## Strategies
 * Plan – consider likely rate-limiting steps and best methodology before starting
-* Modularize – test subcomponents, brainstorm sanity checks
+* Modularize – test subcomponents, brainstorm sanity checks, use branching in Git
 * Check variable values, types, array sizes by hand (print statements or interrupted run)
 * Don’t assume “running” = “working”
 * Use meaningful variable names (more than one letter!) that are not too similar
