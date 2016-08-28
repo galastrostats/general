@@ -25,6 +25,6 @@
 * avoid "import" for scripts -- they will run at the time of import! use the "def main" protocol if you want your code to be both callable like a script and importable like a package -- see [this link](https://en.wikibooks.org/wiki/Python_Programming/Modules)
 * don't define a function in the middle of a program, even though python lets you -- doing this muddles whether variables are defined inside or outside the function
 * you can't use the variable name "lambda", it's a reserved word
-* standard indentation of code levels is 4 spaces; do not use tabs
-* where speed is essential use libraries written in C and/or packages and functions set up to multi-thread
+* do not use tabs as white space; standard indentation of code levels is 4 spaces (this is a matter of preference, but standardizing is essential when collaborating)
+* when speed is critical use libraries written in C and/or packages and functions set up to multi-thread
 
