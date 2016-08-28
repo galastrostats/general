@@ -10,17 +10,13 @@
 ## Strategies
 * Plan – consider likely rate-limiting steps and best methodology before starting
 * Modularize – test subcomponents, brainstorm sanity checks
-
 * Check variable values, types, array sizes by hand (print statements or interrupted run)
 * Don’t assume “running” = “working”
-
 * Use meaningful variable names (more than one letter!) that are not too similar
 * Keep standard defaults: e.g. i, j reserved for integer loop counters
 * Replace hardwired numbers with constant names at top
-
 * Write comments (including at end of command sets, e.g. in if-then)
 * Take advantage of helpful visual appearance: white space, syntax highlighting
-
 * Avoid loops when unnecessary (possible tradeoff with understandability)
 * Manage I/O and memory
 * Use print and system time statements to find out where code fails/slows
