@@ -110,11 +110,12 @@ the next line ("n") command works in pdb?
 Task 2: We don't always want to optimize code speed -- sometimes it's
 just not important -- but you should be in the habit of avoiding 
 silly things that slow your code down, like unnecessary loops or math
-operations. Use time.clock() to measure the time taken by each part of 
-the code above and try to find inefficiencies. When you find a slow step,
-ask yourself whether it could be faster, and whether it matters (is it 
-the rate-limiting step?). For now, fix it even if it's not the rate-
-limiting step, just for practice.
+operations. Use time.clock() to measure the time taken by the whole code,
+and each part of the code, above and try to find inefficiencies. When 
+you find a slow step, ask yourself whether it could be faster, and 
+whether it matters (is it the rate-limiting step?). For now, fix it 
+even if it's not the rate-limiting step, just for practice. Overall,
+you should be able to speed up this code by about a factor of 10.
 
 Task 3: Some things in the code above represent poor programming practice,
 even though they do not affect speed and are not bugs. Note examples and
