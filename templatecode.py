@@ -103,7 +103,9 @@ to find them using pdb.set_trace() as described in the tutorial here:
 https://pythonconquerstheuniverse.wordpress.com/category/python-debugger/
 Check the size and contents of the variables at each step to determine 
 whether they make sense. Useful commands include print, len(), and 
-np.size().
+np.size(). WATCH OUT: the very first bug you need to find is one that
+makes pdb not even work properly -- why does this code mess up how
+the next line ("n") command works in pdb?
 
 Task 2: We don't always want to optimize code speed -- sometimes it's
 just not important -- but you should be in the habit of avoiding 
