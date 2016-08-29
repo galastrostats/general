@@ -86,7 +86,7 @@ for i in xrange(0, len(N)):
     sel = np.where(prob == max(prob))
     n = xvals[sel]
     probval = prob[sel]
-    label = "count %s hr" % (nhr[i])
+    label = "count for %s hr" % (nhr[i])
     plt.text(n, probval, label)
     
 # plot Gaussian distribution with matching mean and sigma
