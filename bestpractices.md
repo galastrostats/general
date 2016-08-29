@@ -1,6 +1,6 @@
 # Programming Best Practices
 
-## Goals:
+## Goals
 
 * Easy debugging
 * Easy modification
