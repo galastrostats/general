@@ -27,4 +27,20 @@
 * you can't use the variable name "lambda", it's a reserved word
 * do not use tabs as white space; standard indentation of code levels is 4 spaces (this is a matter of preference, but standardizing is essential when collaborating)
 * when speed is critical use libraries written in C and/or packages and functions set up to multi-thread
+* debug using the python debugger module "pdb" explained [here](https://pythonconquerstheuniverse.wordpress.com/category/python-debugger/)
+* time code using the system clock, for example: 
 
+```python
+import numpy as np
+import time
+
+init_time = time.clock()  # start clock
+x = np.linspace(0,100,1000000)
+y = np.sqrt(x)
+
+elap_time = time.clock() - init_time  # finds difference
+
+print "Time elapsed is %0.3f ms" % (elap_time*1000)  # converts to ms
+```
+
+or in ipython try using the [`%time`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-time) and [`%timeit`](https://ipython.org/ipython-doc/3/interactive/magics.html#magic-timeit) magics
