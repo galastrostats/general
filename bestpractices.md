@@ -27,7 +27,7 @@
 * you can't use the variable name "lambda", it's a reserved word
 * do not use tabs as white space; standard indentation of code levels is 4 spaces (this is a matter of preference, but standardizing is essential when collaborating)
 * when speed is critical use libraries written in C and/or packages and functions set up to multi-thread
-* debug using the python debugger module "pdb" explained [here](https://pythonconquerstheuniverse.wordpress.com/category/python-debugger/)
+* debug using the python debugger module "pdb" ([quick tutorial here](https://pythonconquerstheuniverse.wordpress.com/category/python-debugger/))
 * time code using the system clock, for example: 
 
 ```python
