@@ -57,29 +57,29 @@ N and 68% confidence interval +-sqrt(N), to see how quickly the Poisson shape
 approaches a Gaussian shape (i.e., when are we in the "large N" limit).
 """
     
-def gaussfunc(xvals,mean,sigma):
+def gaussfunc(xvals, mean, sigma):
     y = np.exp(-1.*(((xvals-mean)**2) / (2.* sigma**2)))
     norm = 1./np.sqrt(2. * sigma**2 * np.pi)
     y = norm * y
     return y
 
 U = 8 # underlying rate of gym users per hour
-N = np.array([6,36,216,1296]) # total number of people counted (powers of 6)
+N = np.array([6, 36, 216, 1296]) # total number of people counted (powers of 6)
 nhr = N/U # time to count this many people
 
-for i in xrange(0,len(N)):
+for i in xrange(0, len(N)):
     
     # plot probabilities of count values for range around mean
     mean = N[i]
     maxval = 2*mean
-    xvals=np.arange(0,maxval)
-    def poissonfunc(xvals,mean):
+    xvals=np.arange(0, maxval)
+    def poissonfunc(xvals, mean):
         prob=np.zeros(len(xvals))
-        for j in range(0,len(xvals)):
-            prob[j] = stats.poisson.pmf(xvals[j],mean)
+        for j in range(0, len(xvals)):
+            prob[j] = stats.poisson.pmf(xvals[j], mean)
         return prob
-    prob = poissonfunc(xvals,mean)
-    plt.plot(xvals,prob,'r')
+    prob = poissonfunc(xvals, mean)
+    plt.plot(xvals, prob, 'r', lw=3)
     plt.xlabel("count value")
     plt.ylabel("probability")
     plt.xscale("log")
@@ -87,12 +87,12 @@ for i in xrange(0,len(N)):
     n = xvals[sel]
     probval = prob[sel]
     label = "count %s hr" % (nhr[i])
-    plt.text(n,probval,label)
+    plt.text(n, probval, label)
     
 # plot Gaussian distribution with matching mean and sigma
 sigma=np.sqrt(mean)
-y = gaussfunc(xvals,mean,sigma)
-plt.plot(xvals,y,'b')
+y = gaussfunc(xvals, mean, sigma)
+plt.plot(xvals, y, 'b')
 
 
 """
