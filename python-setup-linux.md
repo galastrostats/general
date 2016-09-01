@@ -16,6 +16,7 @@ You are now your own anaconda environment, and your terminal prompt should start
 
     conda install -c OpenAstronomy healpy
     pip install git+https://github.com/astroML/astroML
+    conda install nb_conda_kernels
     
 The first line installs healpy through anaconda.org, and the second installs the most up to data version of astroML through the github repository.
 
