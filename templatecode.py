@@ -63,9 +63,10 @@ def gaussfunc(xvals, mean, sigma):
     y = norm * y
     return y
 
-U = 8 # underlying rate of gym users per hour
+U = 8. # underlying rate of gym users per hour
 N = np.array([6, 36, 216, 1296]) # total number of people counted (powers of 6)
 nhr = N/U # time to count this many people
+labelarr = ["count for %s hr" % ihr for ihr in nhr]
 
 for i in xrange(0, len(N)):
     
@@ -86,8 +87,8 @@ for i in xrange(0, len(N)):
     sel = np.where(prob == max(prob))
     n = xvals[sel]
     probval = prob[sel]
-    label = "count %s hr" % (nhr[i])
-    plt.text(n, probval, label)
+#    label = "count %s hr" % (nhr[i])
+    plt.text(n, probval, label[i])
     
 # plot Gaussian distribution with matching mean and sigma
 sigma=np.sqrt(mean)
