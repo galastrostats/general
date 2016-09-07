@@ -87,8 +87,8 @@ for i in xrange(0, len(N)):
     sel = np.where(prob == max(prob))
     n = xvals[sel]
     probval = prob[sel]
-#    label = "count %s hr" % (nhr[i])
-    plt.text(n, probval, label[i])
+    label = "count for %s hr" % (nhr[i])
+    plt.text(n, probval, label)
     
 # plot Gaussian distribution with matching mean and sigma
 sigma=np.sqrt(mean)
@@ -104,16 +104,19 @@ to find them using pdb.set_trace() as described in the tutorial here:
 https://pythonconquerstheuniverse.wordpress.com/category/python-debugger/
 Check the size and contents of the variables at each step to determine 
 whether they make sense. Useful commands include print, len(), and 
-np.size().
+np.size(). WATCH OUT: the very first bug you need to find is one that
+makes pdb not even work properly -- why does this code mess up how
+the next line ("n") command works in pdb?
 
 Task 2: We don't always want to optimize code speed -- sometimes it's
 just not important -- but you should be in the habit of avoiding 
 silly things that slow your code down, like unnecessary loops or math
-operations. Use time.clock() to measure the time taken by each part of 
-the code above and try to find inefficiencies. When you find a slow step,
-ask yourself whether it could be faster, and whether it matters (is it 
-the rate-limiting step?). For now, fix it even if it's not the rate-
-limiting step, just for practice.
+operations. Use time.clock() to measure the time taken by the whole code,
+and each part of the code, above and try to find inefficiencies. When 
+you find a slow step, ask yourself whether it could be faster, and 
+whether it matters (is it the rate-limiting step?). For now, fix it 
+even if it's not the rate-limiting step, just for practice. Overall,
+you should be able to speed up this code by about a factor of 10.
 
 Task 3: Some things in the code above represent poor programming practice,
 even though they do not affect speed and are not bugs. Note examples and
