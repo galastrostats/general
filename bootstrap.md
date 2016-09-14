@@ -11,10 +11,10 @@ Download the python code to generate Figures 3.24 and 4.3 in the book. Each of t
 
 ## Part II: The Smoothed Bootstrap
 
-Bootstrapping can be unreliable for small samples. Let's explore how to obtain an unbiased (or less biased) estimate of &sigma; for a small sample, using alternative forms of bootstrapping.
+Bootstrapping can be unreliable for small samples. Let's explore how to obtain a more reliable estimate of &sigma; for a small sample, using alternative forms of bootstrapping.
 
-1. Construct an initial random sample of 5 points drawn from a Gaussian with mean = 0 and &sigma; = 1. Compare the directly computed &sigma; for this sample from `np.std` to  the input ("true") &sigma; as well as to the &sigma; found using `astroML.resample.bootstrap` with `np.std`.
+1. Construct an initial random sample of 5 points drawn from a Gaussian with mean = 0 and &sigma; = 1. Compare the directly computed &sigma; for this sample from `np.std` to  the input ("true") &sigma; as well as to the &sigma; found using `astroML.resample.bootstrap` with `np.std`. Bootstrapping outputs an entire distribution of values (one for each bootstrap iteration) so you can think of the median value as the &sigma; estimate and the 16th and 84th percentiles as bounding the 68% confidence interval.
 
-2. Using the discussion in section 2 of [Hesterberg (2004)](https://github.com/galastrostats/general/blob/master/JSM04-bootknife.pdf) and modeling your code on `astroML.resample.bootstrap`, construct a utility code called `smoothedbootstrap`. Test your smoothedbootstrap code on the sample from question 1 to determine whether it performs better than the ordinary bootstrap at recovering &sigma;. For a large number of initial samples, plot the distributions or ratios of the various &sigma; estimates to compare them.
+2. Using the discussion in section 2 of [Hesterberg (2004)](https://github.com/galastrostats/general/blob/master/JSM04-bootknife.pdf) and modeling your code on `astroML.resample.bootstrap`, construct a utility code called `smoothedbootstrap`. Test your smoothedbootstrap code on the sample from question 1 to determine whether it performs better than the ordinary bootstrap at recovering &sigma;. For a large number of initial samples, plot the distributions and ratios of the various &sigma; estimates to compare them.
 
 3. As time permits, construct a utility code to implement `bootknife` sampling as described in the article, and compare its performance to the smoothed bootstrap.
