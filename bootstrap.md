@@ -11,7 +11,7 @@ Download the python code to generate Figures 3.24 and 4.3 in the book. Each of t
 
 ## Part II: The Smoothed Bootstrap
 
-Bootstrapping can be unreliable for small samples. Let's explore how to obtain an unbiased (or less biased) estimate of &sigma; for a small sample, using "smoothed bootstrapping".
+Bootstrapping can be unreliable for small samples. Let's explore how to obtain an unbiased (or less biased) estimate of &sigma; for a small sample, using alternative forms of bootstrapping.
 
 1. Construct an initial random sample of 5 points drawn from a Gaussian with mean = 0 and &sigma; = 1. Compare the directly computed &sigma; for this sample from `np.std` to  the input ("true") &sigma; as well as to the &sigma; found using `astroML.resample.bootstrap` with `np.std`.
 
