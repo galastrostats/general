@@ -15,4 +15,6 @@ Bootstrapping can be unreliable for small samples. Let's explore how to obtain a
 
 1. Construct an initial random sample of 5 points drawn from a Gaussian with mean = 0 and &sigma; = 1. Compare the directly computed &sigma; for this sample from `np.std` to  the input ("true") &sigma; as well as to the &sigma; found using `astroML.resample.bootstrap` with `np.std`.
 
-2. Using the discussion in section 2 of [Hesterberg (2004)](https://github.com/galastrostats/general/blob/master/JSM04-bootknife.pdf) and modeling your code on `astroML.resample.bootstrap`, construct a utility code called `smoothedbootstrap`. Test your smoothedbootstrap code on the sample from question 1 to determine whether it performs better than the ordinary bootstrap at recovering &sigma;. For a large number of initial samples, plot the ratios of the various &sigma; estimates.
+2. Using the discussion in section 2 of [Hesterberg (2004)](https://github.com/galastrostats/general/blob/master/JSM04-bootknife.pdf) and modeling your code on `astroML.resample.bootstrap`, construct a utility code called `smoothedbootstrap`. Test your smoothedbootstrap code on the sample from question 1 to determine whether it performs better than the ordinary bootstrap at recovering &sigma;. For a large number of initial samples, plot the distributions or ratios of the various &sigma; estimates to compare them.
+
+3. As time permits, construct a utility code to implement `bootknife` sampling as described in the article, and compare its performance to the smoothed bootstrap.
