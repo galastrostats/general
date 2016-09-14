@@ -11,6 +11,6 @@ Download the python code to generate Figures 3.24 and 4.3 in the book. Each of t
 
 ## Part II: The Smoothed Bootstrap
 
-1. Construct a random sample of 1000 points drawn from a Gaussian, and compare the ;sigma& computed directly with the input ("true") ;sigma& as well as the ;sigma& found using `astroML.resample.bootstrap`.
+1. Construct a random sample of 1000 points drawn from a Gaussian, and compare the &sigma; computed directly with the input ("true") &sigma; as well as the &sigma; found using `astroML.resample.bootstrap`.
 
-2. Using the discussion in section 2 of [Hesterberg (2004)](JSM04-bootknife.pdf) and modeling your code on `astroML.resample.bootstrap`, construct a utility code called `smoothedbootstrap` that you will be able to use in future projects. Test your smoothedbootstrap code on the sample from question 1 to verify that it performs better than the bootstrap at recovering ;sigma&.
+2. Using the discussion in section 2 of [Hesterberg (2004)](JSM04-bootknife.pdf) and modeling your code on `astroML.resample.bootstrap`, construct a utility code called `smoothedbootstrap` that you will be able to use in future projects. Test your smoothedbootstrap code on the sample from question 1 to verify that it performs better than the ordinary bootstrap at recovering &sigma;.
