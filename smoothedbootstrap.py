@@ -1,14 +1,15 @@
 """
 Smoothed Bootstrap Function
 Author: Sheila Kannappan
-created September 2016
+adapted from astroML.resample.bootstrap September 2016
 """
 
 import numpy as np
+import numpy.random as npr
 from astroML.utils import check_random_state
 
 def smoothedbootstrap(data, n_bootstraps, user_statistic, kwargs=None,
-              pass_indices=False, random_state=None):
+              random_state=None):
     """Compute smoothed bootstrapped statistics of a data set.
 
     Parameters
@@ -26,9 +27,6 @@ def smoothedbootstrap(data, n_bootstraps, user_statistic, kwargs=None,
     kwargs : dictionary (optional)
         A dictionary of keyword arguments to be passed to the
         user_statistic function.
-    pass_indices : boolean (optional)
-        if True, then the indices of the points rather than the points
-        themselves are passed to `user_statistic`
     random_state: RandomState or an int seed (0 by default)
         A random number generator instance
 
@@ -52,12 +50,15 @@ def smoothedbootstrap(data, n_bootstraps, user_statistic, kwargs=None,
 
     # Generate random indices with repetition
     ind = rng.randint(n_datapts, size=(n_bootstraps, n_datapts))
+    
+    # smoothing noise
+    noisemean = 0.
+    noisesigma = np.std(data,ddof=1) / np.sqrt(n_datapts)
+    noise = npr.normal(noisemean,noisesigma,(n_bootstraps, n_datapts))
+    databroadcast = data[ind] + noise
 
     # Call the function
-    if pass_indices:
-        stat_bootstrap = user_statistic(ind, **kwargs)
-    else:
-        stat_bootstrap = user_statistic(data[ind], **kwargs)
+    stat_bootstrap = user_statistic(databroadcast, **kwargs)
 
     # compute the statistic on the data
     return stat_bootstrap
