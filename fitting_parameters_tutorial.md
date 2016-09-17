@@ -16,33 +16,43 @@ These are just a few examples of why we might want to fit a model to our data. I
 
 *Least Squares Fitting* is based on the assumption that the uncertainty in your measurements follows a Gaussian distribution. In the linear case, the best solution is given by the slope & y-intercept parameters that minimize the root mean square (rms) of the residuals in the y-direction.
 
-The rms squared is given by: where x<sub>i</sub> is the independent variable, y<sub>i</sub> is the dependent variable with uncertainty σ<sub>i</sub>, and α and β are the slope and y-intercept parameter values.
+The rms squared is given by: <img src="https://latex.codecogs.com/png.latex?\mathrm{rms}^2=\sum\frac{\left(y_i-\left(\alpha&space;x_i&plus;\beta\right)\right&space;)^2}{\sigma_i^2}"/> where x<sub>i</sub> is the independent variable, y<sub>i</sub> is the dependent variable with uncertainty σ<sub>i</sub>, and α and β are the slope and y-intercept parameter values.
 
 Least Squares Fitting falls within the category of parameter fitting known as *Maximum Likelihood Estimation (*MLE). In this method, we measure the likelihood for a given model using the χ<sup>2</sup> statistic:
 
-The likelihood is given by:where
+The likelihood is given by: <img src="https://latex.codecogs.com/png.latex?L=\exp{\frac{-\chi^2}{2}}"/> where <img src="https://latex.codecogs.com/png.latex?\chi^2=\sum\frac{\left(y_{value,i}-y_{model,i}\right)^2}{\sigma_i^2}"/>
 
-To find the MLE solution to our model, we maximize the likelihood function by taking the derivative with respect to each parameter (the slope and y-intercept in the case of a linear fit) and by solving for where each derivative is equal to 0. To simplify the math, we first take the natural log of the likelihood function. For least squares fitting, it is possible to obtain an analytical solution for the slope and y-intercept. The derivation is shown below:
+To find the MLE solution to our model, we maximize the likelihood function by taking the derivative with respect to each parameter (the slope and y-intercept in the case of a linear fit) and by solving for where each derivative is equal to 0. To simplify the math, we first take the natural log of the likelihood function. For least squares fitting, it is possible to obtain an analytical solution for the slope and y-intercept. 
 
-*take the natural log of the likelihood function*
+### Derivation:
 
-* take the derivatives of ln(L) with respect to α and β and set those equations to 0*
+1. Take the natural log of the likelihood function <img src="https://latex.codecogs.com/png.latex?\ln(L)=-\frac{1}{2}\chi^2=\frac{1}{2}\sum\frac{\left(y_i-\left(\alpha&space;x_i&plus;\beta\right)\right&space;)^2}{\sigma_i^2}"/>
 
-*if we assume σ*<sub>*i\\ *</sub>*are all the same, we have two equations for two unknowns to solve:*
+2. Take the derivatives of ln(L) with respect to α and β and set those equations to 0 <img src="https://latex.codecogs.com/png.latex?\frac{d\ln(L)}{d\alpha}=-\sum\frac{\left(y_i-\left(\alpha&space;x_i&plus;\beta\right)\right)(-\chi_i)}{\sigma_i^2}"/> and <img src="https://latex.codecogs.com/png.latex?\frac{d\ln(L)}{d\beta}=-\sum\frac{\left(y_i-\left(\alpha&space;x_i&plus;\beta\right)\right)(-1)}{\sigma_i^2}"/>
 
-**eqn 1:** **eqn 2:**
+if we assume σ<sub>i</sub> are all the same, we have two equations for two unknowns to solve:
 
-multiply eqn 1 by N and multiply eqn 2 by
+**eqn 1** <img src="https://latex.codecogs.com/png.latex?\sum&space;y_i&space;x_i-\alpha\sum&space;x_i^2-\beta\sum&space;x_i=0"/> 
+**eqn 2** <img src="https://latex.codecogs.com/png.latex?\sum&space;y_i-\alpha\sum&space;x_i^2-N\beta=0"/> 
 
-**eqn1:** **eqn2:**
+multiply eqn 1 by N and multiply eqn 2 by <img src="https://latex.codecogs.com/png.latex?\sum&space;x_i"/> 
+
+**eqn 1** <img src="https://latex.codecogs.com/png.latex?N\sum&space;y_i&space;x_i-N\alpha\sum&space;x_i^2-N\beta\sum&space;x_i=0"/> 
+**eqn 2** <img src="https://latex.codecogs.com/png.latex?\sum&space;x_i\sum&space;y_i-\alpha\sum&space;x_i\sum&space;x_i^2-N\beta\sum&space;x_i=0"/> 
 
 now we can set these two equations equal to each other and solve for α
 
-*divide top and bottom by N*<sup>*2*</sup> *where the bar over the variable signifies the mean value of that quantity *
+<img src="https://latex.codecogs.com/png.latex?N\sum&space;y_i&space;x_i-N\alpha\sum&space;x_i^2=\sum&space;x_i\sum&space;y_i-\alpha(\sum&space;x_i)^2"/>
 
-*now we can go back and solve for β:*
+Solving for α and divide top and bottom by N<sup>2</sup> 
 
-*from* **eqn 2** **====&gt;** **====&gt;**
+<img src="https://latex.codecogs.com/png.latex?\alpha=\frac{\bar{x}\bar{y}-\bar{xy}}{\bar{x}^2-\bar{(x^2)}}"/>
+
+where the bar over the variable signifies the mean value of that quantity.
+
+Now we can go back and solve for β:
+
+from **eqn 2** <img src="https://latex.codecogs.com/png.latex?\beta=\bar{y}-\alpha\bar{x}"/> 
 
 For more complicated functions or if the uncertainties are not uniform, the derivatives of the likelihood may not be possible to solve analytically, and we can use programs such as `np.polyfit` to determine the parameters numerically.
 
