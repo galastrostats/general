@@ -137,7 +137,8 @@ In `paramfit2.py` we use the same fake data set created in `paramfit1.py`. This 
 5. Now that we have our posterior distribution over the entire parameter space, we can find the posterior distributions of our individual parameters by summing over the posterior distributions of the other parameters (i.e., if we want to look at the posterior distribution of the slope, we sum over the posterior distribution of the y-intercept). We call this procedure "marginalizing."
 
 (See diagram)
-![jointmarginalsmall.jpg]
+
+![](jointmarginalsmall.jpg)
 
 Plot the marginalized posterior distributions of the slope using the two different priors (green for flat and red for compensating). Are there any differences (you may need to zoom in)? How do the marginalized posterior distributions of the slope compare with the MLE values from paramfit1.py? Estimate the uncertainty on the slope value from the plot by eye (you may need to zoom in on the region of significant probability). How does the uncertainty on the slope compare with the MLE value? Do the same for the y-intercept. What happens to the marginalized posterior distributions for the slope and y-intercept if you change the number of data points (try N=100, N=10)? What happens if you change the grid spacing (try slope ranges from 1-10 in steps of 0.1, y-int ranges from 1-10 in steps of 1)?
 
