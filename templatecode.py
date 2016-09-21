@@ -20,8 +20,8 @@ import scipy.stats as stats     # statistical functions
 #import astroML as ml            # machine learning for astronomy
 #import astroML.datasets as mld  # datasets
 #import pymc                     # bayesian package with MCMC
-import pdb                      # python debugger
-import time                     # python timekeeper
+#import pdb                      # python debugger
+#import time                     # python timekeeper
 #plt.ion()                       # use if working in ipython under linux
 
 # if any package above does not import properly, then you need to
@@ -66,7 +66,7 @@ def gaussfunc(xvals, mean, sigma):
 U = 8. # underlying rate of gym users per hour
 N = np.array([6, 36, 216, 1296]) # total number of people counted (powers of 6)
 nhr = N/U # time to count this many people
-labelarr = ["count for %s hr" % ihr for ihr in nhr]
+#labelarr = ["count for %s hr" % ihr for ihr in nhr]
 
 for i in xrange(0, len(N)):
     
