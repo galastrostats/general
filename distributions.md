@@ -1,5 +1,7 @@
 # Histograms, Kernel Density Estimation, and Hypothesis Tests for Comparing Distributions
 
+created September 2016 by Sheila Kannappan
+
 This activity will focus on displaying and comparing distributions. We'll also use an efficient algorithm for nearest neighbor searches. The relevant textbook sections are: 4.8.1 and 5.7.2 on histograms and the Scott/Freedman-Diaconis/Knuth/Bayesian blocks rules for bin size, 6.1.1 on Kernel Density Estimation (KDE), 4.7.2 on the Kolmogorov-Smirnov test and alternatives, and 2.5.2 on nearest neighbor searches.
 
 1. Read in "ECO_DR1_withradec.csv" from this repo and extract the variables name, radeg, decdeg, grpcz, and cz. Define X, Y, Z coordinates, remembering that you must multiply radeg by cos(decdeg x pi/180.) to get equal size degrees. You should assume a Hubble constant of 70 km/s/Mpc to get Z from cz and grpcz, defining parallel sets of variables for the two redshift inputs. (For example, all the ones based on grpcz could have "nopec" appended to indicate that peculiar velocities have been removed.)
