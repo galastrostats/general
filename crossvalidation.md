@@ -1,6 +1,8 @@
 # Cross Validation
 
-This activity continues on where "Histograms, KDE, and Hypothesis Tests Comparing Distributions" left off. We will not use cross validation on the nearest neighbor data we generated, because it is hard to create independent subsamples of companion distances, where every distance is duplicated twice. Instead we will look at u-r color distributions.
+by Sheila Kannappan September 2016
+
+This activity continues on where "Histograms, KDE, and Hypothesis Tests for Comparing Distributions" left off. We will not use cross validation on the nearest neighbor data we generated, because it is hard to create independent subsamples of companion distances, where every distance is duplicated twice. Instead we will look at u-r color distributions.
 
 Ivezic et al. suggest that cross validation is an ideal way to choose the bandwidth for KDE (p. 254), so let's try it. Instead of leave-one-out cross validation (8.11.3), we'll use standard cross validation (8.11.1) with three subsamples: 50% of the data in a training set and 25% each in cross-validation and test sets.
 
