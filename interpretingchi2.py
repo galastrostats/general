@@ -23,7 +23,7 @@ if i == 0:
 
   for j in xrange(iters):
     # create a data set with random errors whose underlying
-    # functional form is y=1/x
+    # functional form is y=1/x (no free parameters in model)
     xvals = np.zeros(narr)
     yvals = np.zeros(narr)
     xvals = np.arange(narr)/(1.+9.*i) + 1.
@@ -53,7 +53,7 @@ if i == 0:
       
 plt.figure(2)
 plt.clf()
-n1, bins1, patches1 = plt.hist(redchisqdist1,bins=0.05*iters,normed=1,histtype='stepfilled')
+n1, bins1, patches1 = plt.hist(redchisqdist1,bins=round(0.05*iters),normed=1,histtype='stepfilled')
 #n2, bins2, patches2 = plt.hist(redchisqdist2,bins=0.05*iters,normed=1,histtype='step')
 plt.setp(patches1,'facecolor','g','alpha',0.75)
 plt.xlim(0,2.5)
