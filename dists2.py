@@ -88,5 +88,6 @@ plt.figure(1)
 plt.clf()
 plt.plot(urdisttrain[sorttrain],np.exp(logdenstrain[sorttrain]),color='blue',label='train-best')
 plt.plot(urdisttest[sorttest],np.exp(logdenstest[sorttest]),color='red',label='test')
+plt.xlabel("u-r color")
 plt.legend(loc="best")
 
