@@ -133,8 +133,8 @@ p0poss = np.linspace(pfit2[0]-4.*np.sqrt(covp2[0,0]),pfit2[0]+4.*np.sqrt(covp2[0
 p1poss = np.linspace(pfit2[1]-4.*np.sqrt(covp2[1,1]),pfit2[1]+4.*np.sqrt(covp2[1,1]),np1)
 p2poss = np.linspace(pfit2[2]-4.*np.sqrt(covp2[2,2]),pfit2[2]+4.*np.sqrt(covp2[2,2]),np2)
 prior=1.
-modelgridterm1 = p0poss.reshape(1,np0) * xx.reshape(ndata,1)
-modelgridterm2 = modelgridterm1.reshape(ndata,np0,1) + p1poss.reshape(np1,1,1).T
+modelgridterm1 = p0poss.reshape(1,np0) * xx.reshape(ndata,1)**2
+modelgridterm2 = modelgridterm1.reshape(ndata,np0,1) + (p1poss.reshape(np1,1,1).T * xx.reshape(ndata,1,1))
 modelgrid = modelgridterm2.reshape(ndata,np0,np1,1) + p2poss.reshape(np2,1,1,1).T
 residgrid = yy.reshape(ndata,1,1,1) - modelgrid
 chisqgrid = np.sum(residgrid**2/errs**2,axis=0)        
