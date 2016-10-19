@@ -162,12 +162,16 @@ nalpha=100
 nbeta=100
 alphaposs = np.linspace(pfit1[0]-4.*np.sqrt(covp1[0,0]),pfit1[0]+4.*np.sqrt(covp1[0,0]),nalpha)
 betaposs = np.linspace(pfit1[1]-4.*np.sqrt(covp1[1,1]),pfit1[1]+4.*np.sqrt(covp1[1,1]),nbeta)
-prior=1. # better to write 1./(8.*np.sqrt(covp1[0,0])* 8.*np.sqrt(covp1[1,1]))
+range_alpha = (8.*np.sqrt(covp1[0,0]))
+range_beta = (8.*np.sqrt(covp1[1,1]))
+prior_alpha = 1./range_alpha # set priors so that total integrated prob = 1 
+prior_beta = 1./range_beta
+prior_1storder = prior_alpha*prior_beta
 modelgridterm1 = alphaposs.reshape(1,nalpha) * xx.reshape(ndata,1) 
 modelgrid = modelgridterm1.reshape(ndata,nalpha,1) + betaposs.reshape(nbeta,1,1).T
 residgrid = yy.reshape(ndata,1,1) - modelgrid
 chisqgrid = np.sum(residgrid**2/errs**2,axis=0)        
-lnpostprob1 = (-1./2.)*chisqgrid + np.log(prior) 
+lnpostprob1 = (-1./2.)*chisqgrid + np.log(prior_1storder) 
 
 ndata=len(xx)
 np0=100
@@ -176,13 +180,19 @@ np2=100
 p0poss = np.linspace(pfit2[0]-4.*np.sqrt(covp2[0,0]),pfit2[0]+4.*np.sqrt(covp2[0,0]),np0)
 p1poss = np.linspace(pfit2[1]-4.*np.sqrt(covp2[1,1]),pfit2[1]+4.*np.sqrt(covp2[1,1]),np1)
 p2poss = np.linspace(pfit2[2]-4.*np.sqrt(covp2[2,2]),pfit2[2]+4.*np.sqrt(covp2[2,2]),np2)
-prior=1. # better to write 1./(8.*np.sqrt(covp2[0,0])* 8.*np.sqrt(covp2[1,1]) * 8.*np.sqrt(covp2[2,2]))
+range_p0 = (8.*np.sqrt(covp2[0,0]))
+range_p1 = (8.*np.sqrt(covp2[1,1]))
+range_p2 = (8.*np.sqrt(covp2[2,2]))
+prior_p0 = 1./range_p0 # set priors so that total integrated prob = 1 
+prior_p1 = 1./range_p1
+prior_p2 = 1./range_p2
+prior_2ndorder = prior_p0*prior_p1*prior_p2
 modelgridterm1 = p0poss.reshape(1,np0) * xx.reshape(ndata,1)**2
 modelgridterm2 = modelgridterm1.reshape(ndata,np0,1) + (p1poss.reshape(np1,1,1).T * xx.reshape(ndata,1,1))
 modelgrid = modelgridterm2.reshape(ndata,np0,np1,1) + p2poss.reshape(np2,1,1,1).T
 residgrid = yy.reshape(ndata,1,1,1) - modelgrid
 chisqgrid = np.sum(residgrid**2/errs**2,axis=0)        
-lnpostprob2 = (-1./2.)*chisqgrid + np.log(prior) 
+lnpostprob2 = (-1./2.)*chisqgrid + np.log(prior_2ndorder) 
 #'''
 
 # marginalize over all parameters in the two posterior distributions to
@@ -190,9 +200,19 @@ lnpostprob2 = (-1./2.)*chisqgrid + np.log(prior)
 
 # note that the "implicit" prior set by the allowed parameter ranges
 # matters now (see "Occam's Razor" in Ivezic 5.4.2)
-postprob1=np.exp(lnpostprob1) * 1./(8.*np.sqrt(covp1[0,0])* 8.*np.sqrt(covp1[1,1]))
-postprob2=np.exp(lnpostprob2) * 1./(8.*np.sqrt(covp2[0,0])* 8.*np.sqrt(covp2[1,1]) * 8.*np.sqrt(covp2[2,2]))
-odds = np.sum(postprob1) / np.sum(postprob2)
+# and so does "dparams" in the integral (i.e. the widths "dx" of the
+# parameter increments in the integral)
+
+postprob1=np.exp(lnpostprob1)
+dalpha = range_alpha/nalpha
+dbeta = range_beta/nbeta
+integral1 = np.sum(postprob1*dalpha*dbeta)
+postprob2=np.exp(lnpostprob2)
+dp0 = range_p0/np0
+dp1 = range_p1/np1
+dp2 = range_p2/np2
+integral2 = np.sum(postprob2*dp0*dp1*dp2)
+odds = integral1 / integral2
 
 print "odds favoring a 1st order over a 2nd order model: %0.2f" % odds
 
@@ -200,5 +220,7 @@ print "odds favoring a 1st order over a 2nd order model: %0.2f" % odds
 # based on chi^2 analysis? discuss the confidence levels in each analysis
 
 # the 1st order is disfavored at <2sigma confidence by the frequentist 
-# analysis, whereas it is much more strongly disfavored by the Bayesian
-# analysis (factor >10 = "strong" evidence per section 5.4)
+# analysis, whereas it is slightly favored by the Bayesian analysis 
+# (however the factor <10 is "not worth a mention" per section 5.4)
+# apparently the Bayesian odds ratio carries a larger penalty for
+# complexity
