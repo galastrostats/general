@@ -5,7 +5,8 @@ Here are some resources that are specific to this class
 ## Computing servers
 
 1. blarney.castle.unc.edu
-2. edinburgh.castle.unc.edu
+2. stardust.astro.unc.edu
+3. edinburgh.castle.unc.edu [reserved for cross-correlations team]
 
 ## Common file space
 
